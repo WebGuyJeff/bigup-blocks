@@ -20,13 +20,12 @@ namespace BigupWeb\Bigup_Blocks;
 
 // Set global constants.
 define( 'BIGUPWEB_NAMESPACE', 'Bigup_Blocks' );
-$url = plugin_dir_url( __FILE__ );
-define( 'BIGUPBLOCKS_URL', $url );
-$path = plugin_dir_path( __FILE__ );
-define( 'BIGUPBLOCKS_PATH', $path );
+define( 'BIGUPBLOCKS_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
+define( 'BIGUPBLOCKS_PATH', trailingslashit( __DIR__ ) );
+define( 'BIGUPBLOCKS_URL', trailingslashit( get_site_url( null, strstr( __DIR__, '/wp-content/' ) ) ) );
 
-// Load namespace and classes.
-require_once( BIGUPBLOCKS_PATH . 'classes/autoload.php' );
+// Setup PHP namespace.
+require_once BIGUPBLOCKS_PATH . 'classes/autoload.php';
 
 // Setup the plugin.
 $Init = new Init();
