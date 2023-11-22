@@ -19,7 +19,6 @@ namespace BigupWeb\Bigup_Blocks;
  */
 
 // Set global constants.
-define( 'BIGUPWEB_NAMESPACE', 'Bigup_Blocks' );
 define( 'BIGUPBLOCKS_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
 define( 'BIGUPBLOCKS_PATH', trailingslashit( __DIR__ ) );
 define( 'BIGUPBLOCKS_URL', trailingslashit( get_site_url( null, strstr( __DIR__, '/wp-content/' ) ) ) );
