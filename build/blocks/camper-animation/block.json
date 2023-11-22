@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "bigup-blocks/camper-animation",
+  "version": "0.0.1",
+  "title": "Camper Animation",
+  "category": "theme",
+  "icon": "car",
+  "description": "Animation of a camper driving along a road for hero backgrounds.",
+  "keywords": [
+    "hero-background",
+    "hero",
+    "animation"
+  ],
+  "textdomain": "bigup-blocks",
+  "editorScript": "file:./camper-animation.js",
+  "style": "file:./camper-animation.css",
+  "editorStyle": "file:./camper-animation-editor.css"
+}
