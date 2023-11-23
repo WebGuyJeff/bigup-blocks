@@ -63,8 +63,8 @@ class Settings_Parent {
 	/**
 	 * Do Action Hook
 	 */
-	public function below_parent_settings_page_heading() {
-		do_action( 'below_parent_settings_page_heading' );
+	public function bigup_plugin_settings_dashboard_entry() {
+		do_action( 'bigup_plugin_settings_dashboard_entry' );
 	}
 
 
@@ -85,7 +85,7 @@ class Settings_Parent {
 					Management
 				</h2>
 				<div class="dashTiles">
-					<?php $this->below_parent_settings_page_heading(); ?>
+					<?php $this->bigup_plugin_settings_dashboard_entry(); ?>
 				</div>
 			</section>
 
