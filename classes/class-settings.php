@@ -73,12 +73,9 @@ class Settings {
 	 */
 	public function echo_plugin_settings_link() {
 		?>
-
 		<a href="/wp-admin/admin.php?page=<?php echo $this->page_slug; ?>">
 			Go to <?php echo $this->admin_label; ?> settings
 		</a>
-		<br>
-
 		<?php
 	}
 
