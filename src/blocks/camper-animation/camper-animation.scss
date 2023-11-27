@@ -9,9 +9,11 @@
  */
 
 .camperAnimation_wrapper {
-	height: 750px;
 	margin-block-start: 0;
+	position: relative;
 	margin-top: 0;
+	height: 750px;
+	overflow: hidden;
 
 	@media ( min-width: 600px ) {
 		height: 1000px; // Match height of scaling element #camperAnimation.
