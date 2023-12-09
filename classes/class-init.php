@@ -29,8 +29,7 @@ class Init {
 		add_action( 'admin_menu', array( new Settings_Parent(), 'register_admin_menu' ), 1, 0 );
 		$Settings = new Settings();
 		add_action( 'admin_menu', array( &$Settings, 'register_admin_menu' ), 99, 0 );
-		add_action( 'bigup_plugin_settings_dashboard_entry', array( &$Settings, 'echo_plugin_settings_link' ), 10, 0 );
-		add_action( 'bigup_theme_settings_dashboard_entry', array( &$Settings, 'echo_plugin_settings_link' ), 10, 0 );
+		add_action( 'bigup_settings_dashboard_entry', array( &$Settings, 'echo_plugin_settings_link' ), 10, 0 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts_and_styles' ), 10, 0 );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_scripts_and_styles' ), 10, 0 );
 		add_action( 'init', array( new Blocks(), 'register_all' ), 10, 0 );
