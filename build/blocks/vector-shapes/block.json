@@ -1,0 +1,25 @@
+{
+  "apiVersion": 2,
+  "name": "bigup-blocks/vector-shapes",
+  "version": "0.0.1",
+  "title": "Vector Shapes",
+  "category": "design",
+  "icon": "thumbs-up",
+  "description": "Insert vector shapes to jazz up your page design!",
+  "keywords": [
+    "graphic",
+    "svg",
+    "vector",
+    "shape"
+  ],
+  "textdomain": "bigup-blocks",
+  "editorScript": "file:./vector-shapes.js",
+  "editorStyle": "file:./vector-shapes-editor.css",
+  "style": "file:./vector-shapes.css",
+  "attributes": {
+    "currentColor": {
+      "type": "string",
+      "default": "#333"
+    }
+  }
+}
