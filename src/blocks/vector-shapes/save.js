@@ -13,7 +13,10 @@ import { Wave } from './svg'
 export default function save( { attributes } ) {
 
 	const blockProps = useBlockProps.save( {
-		style: { color: attributes.currentColor }
+		style: {
+			'color': attributes.currentColor,
+			'display': 'block'
+		}
 	} )
 
 	return (

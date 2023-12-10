@@ -16,7 +16,10 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { currentColor } = attributes
 
 	const blockProps = useBlockProps( {
-		style: { color: currentColor }
+		style: {
+			'color': currentColor,
+			'display': 'block'
+		}
 	} )
 
 	return (
