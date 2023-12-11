@@ -16,7 +16,8 @@ export default function save( { attributes } ) {
 		style: {
 			'color': attributes.currentColor,
 			'display': 'block'
-		}
+		},
+		className: 'alignfull'
 	} )
 
 	return (

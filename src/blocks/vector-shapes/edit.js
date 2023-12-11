@@ -19,7 +19,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		style: {
 			'color': currentColor,
 			'display': 'block'
-		}
+		},
+		className: 'alignfull'
 	} )
 
 	return (
