@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/vector-shapes/svg/logo.svg":
+/***/ "./src/blocks/mortgage-calc/svg/logo.svg":
 /*!***********************************************!*\
-  !*** ./src/blocks/vector-shapes/svg/logo.svg ***!
+  !*** ./src/blocks/mortgage-calc/svg/logo.svg ***!
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -22,50 +22,20 @@ var SvgLogo = function SvgLogo(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
     height: 16,
-    width: 16,
-    viewBox: "0 0 512 512"
+    width: 12,
+    viewBox: "0 0 384 512"
   }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    d: "M315.4 15.5C309.7 5.9 299.2 0 288 0s-21.7 5.9-27.4 15.5l-96 160c-5.9 9.9-6.1 22.2-.4 32.2s16.3 16.2 27.8 16.2H384c11.5 0 22.2-6.2 27.8-16.2s5.5-22.3-.4-32.2l-96-160zM288 312V456c0 22.1 17.9 40 40 40H472c22.1 0 40-17.9 40-40V312c0-22.1-17.9-40-40-40H328c-22.1 0-40 17.9-40 40zM128 512a128 128 0 1 0 0-256 128 128 0 1 0 0 256z"
+    d: "M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTYiIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjwhLS0hRm9udCBBd2Vzb21lIEZyZWUgNi41LjEgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSBDb3B5cmlnaHQgMjAyMyBGb250aWNvbnMsIEluYy4tLT48cGF0aCBkPSJNMzE1LjQgMTUuNUMzMDkuNyA1LjkgMjk5LjIgMCAyODggMHMtMjEuNyA1LjktMjcuNCAxNS41bC05NiAxNjBjLTUuOSA5LjktNi4xIDIyLjItLjQgMzIuMnMxNi4zIDE2LjIgMjcuOCAxNi4ySDM4NGMxMS41IDAgMjIuMi02LjIgMjcuOC0xNi4yczUuNS0yMi4zLS40LTMyLjJsLTk2LTE2MHpNMjg4IDMxMlY0NTZjMCAyMi4xIDE3LjkgNDAgNDAgNDBINDcyYzIyLjEgMCA0MC0xNy45IDQwLTQwVjMxMmMwLTIyLjEtMTcuOS00MC00MC00MEgzMjhjLTIyLjEgMC00MCAxNy45LTQwIDQwek0xMjggNTEyYTEyOCAxMjggMCAxIDAgMC0yNTYgMTI4IDEyOCAwIDEgMCAwIDI1NnoiLz48L3N2Zz4=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTYiIHdpZHRoPSIxMiIgdmlld0JveD0iMCAwIDM4NCA1MTIiPjwhLS0hRm9udCBBd2Vzb21lIEZyZWUgNi41LjEgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSBDb3B5cmlnaHQgMjAyMyBGb250aWNvbnMsIEluYy4tLT48cGF0aCBkPSJNNjQgMEMyOC43IDAgMCAyOC43IDAgNjRWNDQ4YzAgMzUuMyAyOC43IDY0IDY0IDY0SDMyMGMzNS4zIDAgNjQtMjguNyA2NC02NFY2NGMwLTM1LjMtMjguNy02NC02NC02NEg2NHpNOTYgNjRIMjg4YzE3LjcgMCAzMiAxNC4zIDMyIDMydjMyYzAgMTcuNy0xNC4zIDMyLTMyIDMySDk2Yy0xNy43IDAtMzItMTQuMy0zMi0zMlY5NmMwLTE3LjcgMTQuMy0zMiAzMi0zMnptMzIgMTYwYTMyIDMyIDAgMSAxIC02NCAwIDMyIDMyIDAgMSAxIDY0IDB6TTk2IDM1MmEzMiAzMiAwIDEgMSAwLTY0IDMyIDMyIDAgMSAxIDAgNjR6TTY0IDQxNmMwLTE3LjcgMTQuMy0zMiAzMi0zMmg5NmMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMkg5NmMtMTcuNyAwLTMyLTE0LjMtMzItMzJ6TTE5MiAyNTZhMzIgMzIgMCAxIDEgMC02NCAzMiAzMiAwIDEgMSAwIDY0em0zMiA2NGEzMiAzMiAwIDEgMSAtNjQgMCAzMiAzMiAwIDEgMSA2NCAwem02NC02NGEzMiAzMiAwIDEgMSAwLTY0IDMyIDMyIDAgMSAxIDAgNjR6bTMyIDY0YTMyIDMyIDAgMSAxIC02NCAwIDMyIDMyIDAgMSAxIDY0IDB6TTI4OCA0NDhhMzIgMzIgMCAxIDEgMC02NCAzMiAzMiAwIDEgMSAwIDY0eiIvPjwvc3ZnPg==");
 
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/svg/wave.svg":
-/*!***********************************************!*\
-  !*** ./src/blocks/vector-shapes/svg/wave.svg ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ReactComponent: () => (/* binding */ SvgWave),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _path;
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var SvgWave = function SvgWave(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 1920 60"
-  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    fill: "currentColor",
-    d: "M960 24c641 55 960 0 960 0v37H0V24s319-54 960 0Z"
-  })));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIwIDYwIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik05NjAgMjRjNjQxIDU1IDk2MCAwIDk2MCAwdjM3SDBWMjRzMzE5LTU0IDk2MCAwWiIvPjwvc3ZnPg==");
-
-/***/ }),
-
-/***/ "./src/blocks/vector-shapes/edit.js":
+/***/ "./src/blocks/mortgage-calc/edit.js":
 /*!******************************************!*\
-  !*** ./src/blocks/vector-shapes/edit.js ***!
+  !*** ./src/blocks/mortgage-calc/edit.js ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -79,12 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./svg */ "./src/blocks/vector-shapes/svg.js");
-/* harmony import */ var _vector_shapes_editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./vector-shapes-editor.scss */ "./src/blocks/vector-shapes/vector-shapes-editor.scss");
-
-
+/* harmony import */ var _mortgage_calc_editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mortgage-calc-editor.scss */ "./src/blocks/mortgage-calc/mortgage-calc-editor.scss");
 
 
 
@@ -98,36 +63,80 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-function Edit({
-  attributes,
-  setAttributes
-}) {
-  const {
-    currentColor
-  } = attributes;
+function Edit() {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    style: {
-      'color': currentColor,
-      'display': 'block'
-    },
-    className: 'alignfull'
+    className: 'mortgageCalc'
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Vector Colour"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
-    value: currentColor,
-    colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useSetting)('color.palette')],
-    onChange: value => setAttributes({
-      currentColor: value
-    })
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_svg__WEBPACK_IMPORTED_MODULE_4__.Wave, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     ...blockProps
-  }));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_value"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_value"
+  }, "Mortgage value"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "",
+    id: "mortgageCalc_value",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_years"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_years"
+  }, "Years to repay"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "25",
+    id: "mortgageCalc_years",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_interest"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_interest"
+  }, "Interest rate"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "3",
+    step: "0.01",
+    id: "mortgageCalc_interest",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_type"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Mortgage type"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "radio",
+    id: "repayment",
+    name: "mortgageCalc_type",
+    value: "repayment",
+    checked: true
+  }), "Repayment"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "radio",
+    id: "interest_only",
+    name: "mortgageCalc_type",
+    value: "interest_only"
+  }), "Interest Only")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_field-submit"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "submit",
+    value: "Calculate"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results-total"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results-interest-paid"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      display: 'none!important'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    id: "languageString_monthlyRepaymentLabel"
+  }, "Monthly Repayment:"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    id: "languageString_totalInterestPaidLabel"
+  }, "Total Interest Paid:"))));
 }
 
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/save.js":
+/***/ "./src/blocks/mortgage-calc/save.js":
 /*!******************************************!*\
-  !*** ./src/blocks/vector-shapes/save.js ***!
+  !*** ./src/blocks/mortgage-calc/save.js ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -139,8 +148,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./svg */ "./src/blocks/vector-shapes/svg.js");
-
 
 
 
@@ -153,36 +160,88 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-function save({
-  attributes
-}) {
+function save() {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    style: {
-      'color': attributes.currentColor,
-      'display': 'block'
-    },
-    className: 'alignfull'
+    className: 'mortgageCalc'
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_svg__WEBPACK_IMPORTED_MODULE_2__.Wave, {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     ...blockProps
-  });
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_value"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_value"
+  }, "Mortgage value"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "",
+    id: "mortgageCalc_value",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_years"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_years"
+  }, "Years to repay"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "25",
+    id: "mortgageCalc_years",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_interest"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "mortgageCalc_interest"
+  }, "Interest rate"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "number",
+    value: "3",
+    step: "0.01",
+    id: "mortgageCalc_interest",
+    required: true
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_inpuWrapper mortgageCalc_type"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Mortgage type"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "radio",
+    id: "repayment",
+    name: "mortgageCalc_type",
+    value: "repayment",
+    checked: true
+  }), "Repayment"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "radio",
+    id: "interest_only",
+    name: "mortgageCalc_type",
+    value: "interest_only"
+  }), "Interest Only")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "mortgageCalc_field-submit"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "submit",
+    value: "Calculate"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results-total"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mortgageCalc_results-interest-paid"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      display: 'none!important'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    id: "languageString_monthlyRepaymentLabel"
+  }, "Monthly Repayment:"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    id: "languageString_totalInterestPaidLabel"
+  }, "Total Interest Paid:"))));
 }
 
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/svg.js":
+/***/ "./src/blocks/mortgage-calc/svg.js":
 /*!*****************************************!*\
-  !*** ./src/blocks/vector-shapes/svg.js ***!
+  !*** ./src/blocks/mortgage-calc/svg.js ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Logo: () => (/* reexport safe */ _svg_logo_svg__WEBPACK_IMPORTED_MODULE_1__.ReactComponent),
-/* harmony export */   Wave: () => (/* reexport safe */ _svg_wave_svg__WEBPACK_IMPORTED_MODULE_0__.ReactComponent)
+/* harmony export */   Logo: () => (/* reexport safe */ _svg_logo_svg__WEBPACK_IMPORTED_MODULE_0__.ReactComponent)
 /* harmony export */ });
-/* harmony import */ var _svg_wave_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./svg/wave.svg */ "./src/blocks/vector-shapes/svg/wave.svg");
-/* harmony import */ var _svg_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./svg/logo.svg */ "./src/blocks/vector-shapes/svg/logo.svg");
+/* harmony import */ var _svg_logo_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./svg/logo.svg */ "./src/blocks/mortgage-calc/svg/logo.svg");
 /**
  * Webpack entry point.
  */
@@ -190,12 +249,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/vector-shapes-editor.scss":
+/***/ "./src/blocks/mortgage-calc/mortgage-calc-editor.scss":
 /*!************************************************************!*\
-  !*** ./src/blocks/vector-shapes/vector-shapes-editor.scss ***!
+  !*** ./src/blocks/mortgage-calc/mortgage-calc-editor.scss ***!
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -205,9 +263,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/vector-shapes.scss":
+/***/ "./src/blocks/mortgage-calc/mortgage-calc.scss":
 /*!*****************************************************!*\
-  !*** ./src/blocks/vector-shapes/vector-shapes.scss ***!
+  !*** ./src/blocks/mortgage-calc/mortgage-calc.scss ***!
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -247,16 +305,6 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -267,13 +315,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/blocks/vector-shapes/block.json":
+/***/ "./src/blocks/mortgage-calc/block.json":
 /*!*********************************************!*\
-  !*** ./src/blocks/vector-shapes/block.json ***!
+  !*** ./src/blocks/mortgage-calc/block.json ***!
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":2,"name":"bigup-blocks/vector-shapes","version":"0.0.1","title":"Vector Shapes","category":"design","icon":"thumbs-up","description":"Insert vector shapes to jazz up your page design!","keywords":["graphic","svg","vector","shape"],"textdomain":"bigup-blocks","editorScript":"file:./vector-shapes.js","editorStyle":"file:./vector-shapes-editor.css","style":"file:./vector-shapes.css","attributes":{"currentColor":{"type":"string","default":"#333"}}}');
+module.exports = JSON.parse('{"apiVersion":2,"name":"bigup-blocks/mortgage-calc","version":"0.0.1","title":"Mortgage Calculator","category":"widgets","icon":"thumbs-up","description":"Insert vector shapes to jazz up your page design!","keywords":["mortgage","calculator","finance"],"textdomain":"bigup-blocks","editorScript":"file:./mortgage-calc.js","viewScript":"file:./mortgage-calc-view.js","editorStyle":"file:./mortgage-calc-editor.css","style":"file:./mortgage-calc.css"}');
 
 /***/ })
 
@@ -349,18 +397,18 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 /*!***************************************************!*\
-  !*** ./src/blocks/vector-shapes/vector-shapes.js ***!
+  !*** ./src/blocks/mortgage-calc/mortgage-calc.js ***!
   \***************************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./svg */ "./src/blocks/vector-shapes/svg.js");
-/* harmony import */ var _vector_shapes_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./vector-shapes.scss */ "./src/blocks/vector-shapes/vector-shapes.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/blocks/vector-shapes/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/blocks/vector-shapes/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/vector-shapes/block.json");
+/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./svg */ "./src/blocks/mortgage-calc/svg.js");
+/* harmony import */ var _mortgage_calc_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mortgage-calc.scss */ "./src/blocks/mortgage-calc/mortgage-calc.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/blocks/mortgage-calc/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/blocks/mortgage-calc/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/mortgage-calc/block.json");
 
 
 
@@ -390,4 +438,4 @@ console.log(_block_json__WEBPACK_IMPORTED_MODULE_6__.name + ' BLOCK LOADED');
 
 /******/ })()
 ;
-//# sourceMappingURL=vector-shapes.js.map
+//# sourceMappingURL=mortgage-calc.js.map

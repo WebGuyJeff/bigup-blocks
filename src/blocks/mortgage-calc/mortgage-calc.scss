@@ -1,0 +1,117 @@
+/**
+ * Styles applied in editor and frontend.
+ *
+ * Webpack processes CSS, SASS or SCSS files referenced in JavaScript files.
+ * All filenames containing `style` keyword are bundled together. The code used
+ * gets applied to both the frontend and the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+.mortgageCalc {
+	display: flex;
+	flex-flow: column;
+	gap: 1rem;
+	text-align: center;
+}
+.mortgageCalc label {
+	display: block;
+	margin: 0 0 7px 0;
+}
+.mortgageCalc input[type="number"] {
+	width: 100%;
+}
+.mortgageCalc input[type="radio"] {
+	width: auto !important;
+	border: solid 0.2px #181818 !important;
+}
+.mortgageCalc input:focus {
+	outline: solid 0.1875rem #181818;
+}
+.mortgageCalc_field {
+	position: relative;
+	margin: 0 0 12px 0;
+}
+#mortgageCalc_value {
+	padding-left: 2rem !important;
+}
+
+.mortgageCalc_inpuWrapper {
+	position: relative;
+}
+
+.mortgageCalc_inpuWrapper:after {
+	display: block;
+	position: absolute;
+	top: 60%;
+	z-index: 10;
+	color: inherit;
+}
+.mortgageCalc_value:after {
+	content: "\00a3";
+	left: 1rem;
+	line-height: 1.45;
+	text-align: right;
+}
+.mortgageCalc_years:after {
+	content: "Years";
+	right: 15px;
+	width: 50px;
+	text-align: left;
+}
+.mortgageCalc_interest:after {
+	content: "%";
+	right: 15px;
+	width: 50px;
+}
+.mortgageCalc_typeWrapper {
+	display: flex;
+	flex-flow: column;
+	gap: 0.5rem;
+	padding: 1rem;
+}
+.mortgageCalc input[type="submit"] {
+	background: #044171;
+	color: #fff;
+	display: inline-block;
+	appearance: none;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+#mortgageCalc_results {
+	display: none;
+}
+#mortgageCalc_results-total,
+#mortgageCalc_results-interest-paid {
+	font-size: 125%;
+	margin: 10px 0 20px 0;
+	padding: 20px;
+	text-align: center;
+	background: #f9f9f9;
+	border-radius: 1rem;
+}
+#mortgageCalc_results-total span,
+#mortgageCalc_results-interest-paid span {
+	font-weight: bold;
+}
+.mortgageCalc_heading {
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+}
+.mortgageCalc_disclaimer {
+	display: block;
+	font-size: 0.8em;
+	line-height: 1.2em;
+	padding: 5px 0 0 0;
+	color: #0007;
+	margin: 0 0 10px 0;
+}
+.mortgageCalc input {
+	position: relative;
+	font-size: 18px;
+	border-radius: 2rem;
+	background-color: #fff;
+	border: none;
+	padding: 1rem 2rem;
+}

@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n'
 import { registerBlockType } from '@wordpress/blocks'
 import { Logo } from './svg'
-import './vector-shapes.scss'
+import './mortgage-calc.scss'
 import Edit from './edit'
 import save from './save'
 import metadata from './block.json'
