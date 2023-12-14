@@ -1,20 +1,2 @@
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/vector-shapes/vector-shapes.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
-/**
- * Styles applied in editor and frontend.
- *
- * Webpack processes CSS, SASS or SCSS files referenced in JavaScript files.
- * All filenames containing `style` keyword are bundled together. The code used
- * gets applied to both the frontend and the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/vector-shapes/vector-shapes-editor.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
-/**
- * Styles applied in the editor only.
- */
 
-/*# sourceMappingURL=vector-shapes.css.map*/
+
