@@ -8,8 +8,12 @@ import {
 	Logo
 } from './svg'
 
-console.log( metadata.name + ' BLOCK LOADED' )
-// RUN IN CONSOLE TO SEE REGISTERED BLOCKS: wp.blocks.getBlockTypes() 
+/*
+ * Debug.
+ * console.log( metadata.name + ' BLOCK LOADED' )
+ * RUN IN CONSOLE TO SEE REGISTERED BLOCKS: wp.blocks.getBlockTypes() 
+ */
+
 
 /**
  * Register the block.
