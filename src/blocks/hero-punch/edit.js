@@ -14,7 +14,6 @@ import {
 	Sun,
 	Star
 } from './svg'
-import './hero-punch-editor.scss'
 
 /**
  * The edit function describes the structure of your block in the context of the

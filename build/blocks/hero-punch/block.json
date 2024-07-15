@@ -14,7 +14,6 @@
   "textdomain": "bigup-blocks",
   "editorScript": "file:./hero-punch.js",
   "viewScript": "file:./hero-punch-view.js",
-  "editorStyle": "file:./hero-punch-editor.css",
   "style": "file:./hero-punch.css",
   "attributes": {
     "animate": {
