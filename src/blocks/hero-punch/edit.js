@@ -15,6 +15,12 @@ import {
 	Star
 } from './svg'
 
+const template = [
+	[
+		'core/paragraph'
+	]
+]
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -46,7 +52,10 @@ export default function Edit() {
 										</div>
 									</div>
 									<div className='copy'>
-										<InnerBlocks />
+										<InnerBlocks
+											template={ template }
+											templateLock="all"
+										/>
 									</div>
 								</div>
 								<div className='svgMe_container'>

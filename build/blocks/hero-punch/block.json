@@ -19,5 +19,8 @@
     "animate": {
       "type": "boolean"
     }
-  }
+  },
+  "allowedBlocks": [
+    "core/paragraph"
+  ]
 }
