@@ -263,17 +263,17 @@
 
 
 	.sign {
+		-o-border-image: var(--lw_triBorder);
 		filter: drop-shadow(3px 8px 8px #0004);
 		position: relative;
 		z-index: 1;
+		margin: auto;
 		border: solid 20px;
 		border-radius: 3px;
-		-o-border-image: var(--lw_triBorder);
 		border-image: var(--lw_triBorder);
 		background: var(--lw_white);
-		height: fit-content;
-		margin: auto;
 		padding: 0 3em;
+		height: fit-content;
 		
 		@media ( max-width: 317px ) {
 			padding: 0 1em;
@@ -301,14 +301,15 @@
 		}
 		
 		&>.sign_pinSignTop {
-			position: absolute;
 			display: flex;
+			position: absolute;
+			top: -20px;
+			right: -20px;
+			left: -20px;
 			flex-flow: row nowrap;
 			justify-content: flex-end;
 			z-index: 10;
-			top: -20px;
-			left: -20px;
-			right: -20px;
+			pointer-events: none;
 			
 			.grabhand {
 				margin-top: -2.2vh;

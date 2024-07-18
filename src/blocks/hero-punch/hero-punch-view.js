@@ -1,4 +1,14 @@
-import { gsap } from "gsap"
+
+
+// This doesn't seem to work??
+// import { gsap } from "gsap"
+
+if ( typeof( gsap ) !== 'object' ) {
+	// GSAP not loaded.
+}
+if ( typeof( ScrollTrigger ) === 'undefined' ) {
+	// ScrollTrigger not loaded.
+}
 
 /**
  * Use this file for JavaScript code that you want to run in the front-end

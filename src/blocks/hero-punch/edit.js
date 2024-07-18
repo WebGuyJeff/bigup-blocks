@@ -16,8 +16,22 @@ import {
 } from './svg'
 
 const template = [
-	[
-		'core/paragraph'
+	[ 'core/group',
+		{
+			className: 'copy',
+			style: { spacing: { padding: { top: 'var:preset|spacing|50', bottom: 'var:preset|spacing|50' } } },
+			lock: { remove: true, move: true },
+			layout: { type: 'constrained' }
+		},
+		[
+			[ 'core/heading', { level: 1, content: __( "I'm a Web Developer!", 'bigup-blocks' ) } ],
+			[ 'core/paragraph', { content: __( "I build awesome websites with flashy animation to woo your audience and make them dream about your brand.", 'bigup-blocks' ) } ],
+			[ 'core/buttons', {},
+				[
+					[ 'core/button', { text: __( "Send me a message", 'bigup-blocks' )	} ]
+				]
+			]
+		]
 	]
 ]
 
@@ -51,12 +65,9 @@ export default function Edit() {
 											<Star />
 										</div>
 									</div>
-									<div className='copy'>
-										<InnerBlocks
-											template={ template }
-											templateLock="all"
-										/>
-									</div>
+									<InnerBlocks
+										template={ template }
+									/>
 								</div>
 								<div className='svgMe_container'>
 									<MeToon />
