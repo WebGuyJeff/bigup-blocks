@@ -62,8 +62,19 @@
 
 	overflow-x: clip; // hidden breaks position:sticky on children.
 
-/*- - - - - - - - - - - - - - - - - - - - - - 2.1.2 LAYOUT - SECTION GRID - - */
+	.scrollTriggerParent {
 
+		// height + vertical padding must match landing backdrop height.
+		height: calc( 100vh + 2500px );
+		padding-bottom: 15vh;
+
+		.scrollTriggerChild {
+			width: 100%;
+			height: 100vh;
+			position: sticky;
+			top: 0;
+		}
+	}
 
 	.sectionGrid {
 		--narrow: minmax( 0px, 48rem );
@@ -84,7 +95,7 @@
 		@media (min-width: 90rem) {
 			grid-template-columns: [full-l] 1fr [wide-l] var(--wide) [medium-l] var(--medium) [narrow-l] var(--narrow) [narrow-r] var(--medium) [medium-r] var(--wide) [wide-r] 1fr [full-r];
 		}
-
+	
 		.landing_content {
 			position: relative;
 			grid-row: var(--row);
@@ -100,19 +111,23 @@
 			justify-content: center;
 			z-index: -1;
 			width: 100%;
-			height: 100%;
+			height: 115vh;
 			overflow: hidden;
-		}
-	}
 
-	.scrollTriggerParent {
-		height: calc( 100vh + 2500px );
-
-		.scrollTriggerChild {
-			width: 100%;
-			height: 100vh;
-			position: sticky;
-			top: 0;
+			background:
+				radial-gradient(
+					at 9% 9%,
+					#fffb 0%,
+					#fff0 30%
+				),
+				linear-gradient(
+					var(--lw_blue-light) 0%,
+					var(--lw_blue-lightest) 20%,
+					var(--lw_yellow-light) 55%,
+					var(--lw_orange-light) 60%,
+					#fff 61%
+				)
+			;
 		}
 	}
 
@@ -130,24 +145,6 @@
 			width: 20vmin;
 			height: 20vmin;
 		}
-	}
-
-	.landing_backdrop {
-		height: 115vh;
-
-		background:
-			radial-gradient(
-				at 9% 9%,
-				#fffb 0%,
-				#fff0 30%
-			),
-			linear-gradient(
-				var(--lw_blue-light) 0%,
-				var(--lw_blue-lightest) 20%,
-				var(--lw_yellow-light) 55%,
-				var(--lw_orange-light) 60%,
-				#fff 61%
-			);
 	}
 
 	.fist_container {
@@ -192,6 +189,12 @@
 		left: 0;
 		z-index: -1;
 		margin: 3vw;
+
+		#sun,
+		#sun_ora,
+		#sun_yel {
+			transform-origin: center;
+		}
 
 		#sun {
 			animation: linear 2s infinite sun_breathe;
@@ -257,10 +260,6 @@
 		opacity: 0;
 		height: 0;
 	}
-
-
-	/* - - SIGN - - */
-
 
 	.sign {
 		-o-border-image: var(--lw_triBorder);
@@ -340,10 +339,6 @@
 			}
 		}	
 	}
-
-
-	/* - - SVGME - - */
-
 
 	.svgMe_container {
 		position: absolute;
