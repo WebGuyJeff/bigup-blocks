@@ -10,6 +10,7 @@
 
 const heroPunchAnimation = () => {
 
+	// GSAP is imported via WP enqueue in PHP init() function.
 	if ( typeof( gsap ) !== 'object' || typeof( ScrollTrigger ) === 'undefined' ) {
 		console.warn( 'Missing GSAP dependencies. Script aborted.' )
 		return
