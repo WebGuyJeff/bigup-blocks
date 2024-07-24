@@ -6,11 +6,11 @@ namespace BigupWeb\Bigup_Blocks;
  *
  * Setup styles and functionality for this plugin.
  *
- * @package bigup-blocks
- * @author Jefferson Real <me@jeffersonreal.uk>
+ * @package   bigup-blocks
+ * @author    Jefferson Real <me@jeffersonreal.uk>
  * @copyright Copyright (c) 2023, Jefferson Real
- * @license GPL3+
- * @link https://jeffersonreal.uk
+ * @license   GPL3+
+ * @link      https://jeffersonreal.uk
  */
 
 // WordPress dependencies.
@@ -18,6 +18,7 @@ use function add_action;
 
 
 class Init {
+
 
 
 	/**
@@ -32,6 +33,7 @@ class Init {
 		add_action( 'bigup_settings_dashboard_entry', array( &$Settings, 'echo_plugin_settings_link' ), 10, 0 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts_and_styles' ), 10, 0 );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_scripts_and_styles' ), 10, 0 );
+		add_action( 'enqueue_block_assets', array( $this, 'frontend_scripts_and_styles' ), 10, 0 );
 		add_action( 'init', array( new Blocks(), 'register_all' ), 10, 0 );
 	}
 
@@ -65,5 +67,15 @@ class Init {
 	 */
 	public function editor_scripts_and_styles() {
 		wp_enqueue_script( 'bigup_blocks_editor_js', BIGUPBLOCKS_URL . 'build/js/bigup-blocks-editor.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/js/bigup-blocks-editor.js' ), true );
+	}
+
+	/**
+	 * Register and enqueue frontend scripts and styles.
+	 */
+	function frontend_scripts_and_styles() {
+		if ( has_block( 'bigup-blocks/hero-punch' ) ) {
+			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/gsap.min.js' ), true );
+			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/ScrollTrigger.min.js' ), true );
+		}
 	}
 }

@@ -1,15 +1,3 @@
-
-
-// This doesn't seem to work??
-// import { gsap } from "gsap"
-
-if ( typeof( gsap ) !== 'object' ) {
-	// GSAP not loaded.
-}
-if ( typeof( ScrollTrigger ) === 'undefined' ) {
-	// ScrollTrigger not loaded.
-}
-
 /**
  * Use this file for JavaScript code that you want to run in the front-end
  * on posts/pages that contain this block.
@@ -20,13 +8,12 @@ if ( typeof( ScrollTrigger ) === 'undefined' ) {
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
-
-/**
- * Animation Script
- *
- * @package bigup-blocks
- */
 const heroPunchAnimation = () => {
+
+	if ( typeof( gsap ) !== 'object' || typeof( ScrollTrigger ) === 'undefined' ) {
+		console.warn( 'Missing GSAP dependencies. Script aborted.' )
+		return
+	}
 
 	gsap.registerPlugin( ScrollTrigger )
 
