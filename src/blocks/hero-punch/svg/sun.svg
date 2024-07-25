@@ -2,14 +2,14 @@
 	<defs>
 		<radialGradient id="rgl_ora">
 			<stop offset="0" stop-color="#fff"/>
-			<stop offset=".5" stop-color="#feffe8" style="stop-color:var(--lw_orange-lightest);"/>
-			<stop offset=".6" stop-color="#fedea0" style="stop-color:var(--lw_orange-light);"/>
+			<stop offset=".5" stop-color="#feffe8" style="stop-color:var(--bb_orange-lightest);"/>
+			<stop offset=".6" stop-color="#fedea0" style="stop-color:var(--bb_orange-light);"/>
 			<stop offset="1" stop-color="#fff0"/>
 		</radialGradient>
 		<radialGradient id="rgl_yel">
 			<stop offset="0" stop-color="#fff"/>
-			<stop offset=".5" stop-color="#feffe8" style="stop-color:var(--lw_yellow-lightest);"/>
-			<stop offset=".6" stop-color="#fbff9f" style="stop-color:var(--lw_yellow-light);"/>
+			<stop offset=".5" stop-color="#feffe8" style="stop-color:var(--bb_yellow-lightest);"/>
+			<stop offset=".6" stop-color="#fbff9f" style="stop-color:var(--bb_yellow-light);"/>
 			<stop offset="1" stop-color="#fff0"/>
 		</radialGradient>
 	</defs>

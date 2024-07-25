@@ -21,14 +21,13 @@ import {
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
 
-    const blockProps = useBlockProps.save( {
-        className: 'heroPunch',
-    } )
+export default function save( { attributes } ) {
+    const blockProps = useBlockProps.save( { className: 'heroPunch' } )
+	const { tagName: TagName = 'div' } = attributes;
 
 	return (
-		<section { ...blockProps }>
+		<TagName { ...blockProps }>
 			<div className='scrollTriggerParent'>
 				<div className='scrollTriggerChild'>
 					<div className='sectionGrid'>
@@ -67,6 +66,6 @@ export default function save() {
 			<div className='fist_container'>
 				<Fist />
 			</div>
-		</section>
+		</TagName>
 	)
 }

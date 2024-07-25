@@ -77,5 +77,9 @@ class Init {
 			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/gsap.min.js' ), true );
 			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/ScrollTrigger.min.js' ), true );
 		}
+		if ( has_block( 'bigup-blocks/flippable-cards' ) ) {
+			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/gsap.min.js' ), true );
+			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/ScrollTrigger.min.js' ), true );
+		}
 	}
 }

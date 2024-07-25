@@ -1,31 +1,23 @@
 {
 	"apiVersion": 2,
-	"name": "bigup-blocks/hero-punch",
+	"name": "bigup-blocks/flippable-cards",
 	"version": "0.0.1",
-	"title": "Hero Punch",
+	"title": "Flippable Cards",
 	"category": "theme",
 	"icon": "thumbs-up",
-	"description": "A full width hero section with animated punch.",
+	"description": "Flippable containers.",
 	"keywords": [
-		"landing page",
-		"hero",
-		"full width"
+		"container",
+		"group"
 	],
 	"textdomain": "bigup-blocks",
-	"editorScript": "file:./hero-punch.js",
-	"viewScript": "file:./hero-punch-view.js",
-	"style": "file:./hero-punch.css",
+	"editorScript": "file:./flippable-cards.js",
+	"viewScript": "file:./flippable-cards-view.js",
+	"style": "file:./flippable-cards.css",
 	"attributes": {
 		"animate": {
 			"type": "boolean"
-		},
-		"tagName": {
-			"type": "string",
-			"default": "div"
 		}
-	},
-	"supports": {
-		"align": [ "wide", "full" ]
 	},
 	"allowedBlocks": [
 		"core/buttons",
@@ -39,8 +31,6 @@
 		"core/list-item",
 		"core/paragraph",
 		"core/post-featured-image",
-		"core/title",
-		"core/site-tagline",
 		"core/social-link",
 		"core/social-links",
 		"core/spacer"

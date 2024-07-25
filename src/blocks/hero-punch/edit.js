@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n'
 import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor'
-import { ToggleControl, PanelBody } from '@wordpress/components'
+import { ToggleControl, PanelBody, SelectControl } from '@wordpress/components'
 import { useState } from '@wordpress/element'
 import {
 	Clouds,
@@ -36,6 +36,38 @@ const template = [
 ]
 
 /**
+ * Render inspector controls for the block.
+ *
+ * @param {Object}   props                 Component props.
+ * @param {string}   props.tagName         The HTML tag name.
+ * @param {Function} props.onSelectTagName onChange function for the SelectControl.
+ *
+ * @return {JSX.Element}                The control group.
+ */
+const HTMLParentControls = ( { tagName, onSelectTagName } ) => {
+	return (
+		<InspectorControls group="advanced">
+			<SelectControl
+				__nextHasNoMarginBottom
+				__next40pxDefaultSize
+				label={ __( 'HTML element' ) }
+				options={ [
+					{ label: __( 'Default (<div>)' ), value: 'div' },
+					{ label: '<header>', value: 'header' },
+					{ label: '<main>', value: 'main' },
+					{ label: '<section>', value: 'section' },
+					{ label: '<article>', value: 'article' },
+					{ label: '<aside>', value: 'aside' },
+					{ label: '<footer>', value: 'footer' },
+				] }
+				value={ tagName }
+				onChange={ onSelectTagName }
+			/>
+		</InspectorControls>
+	);
+}
+
+/**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
@@ -43,16 +75,37 @@ const template = [
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
 	const [ animate, setAnimate ] = useState( true )
-
-	const blockProps = useBlockProps( {
-        className: 'heroPunch',
-    } )
+	const blockProps = useBlockProps( { className: 'heroPunch' } )
+	const { tagName: TagName = 'div' } = attributes;
 	
 	return (
 		<>
-			<section {...blockProps}>
+			<HTMLParentControls
+				tagName={ TagName }
+				onSelectTagName={ ( value ) =>
+					setAttributes( { tagName: value } )
+				}
+			/>
+
+			<InspectorControls>
+				<PanelBody title={ __( 'Hero Punch Settings' ) }>
+					<ToggleControl
+						label='Enable Animation'
+						help={animate ? 'Yes' : 'No'}
+						checked={animate}
+						onChange={ ( newAnimate ) => setAnimate( newAnimate ) }
+					/>
+					{ animate === true && (
+						<span>
+							{ 'Here are more animation settings' }
+						</span>
+					) }
+				</PanelBody>
+			</InspectorControls>
+
+			<TagName {...blockProps}>
 				<div className='scrollTriggerParent'>
 					<div className='scrollTriggerChild'>
 						<div className='sectionGrid'>
@@ -91,23 +144,7 @@ export default function Edit() {
 				<div className='fist_container'>
 					<Fist />
 				</div>
-			</section>
-
-			<InspectorControls>
-				<PanelBody title={ __( 'Hero Punch Settings' ) }>
-					<ToggleControl
-						label='Enable Animation'
-						help={animate ? 'Yes' : 'No'}
-						checked={animate}
-						onChange={ ( newAnimate ) => setAnimate( newAnimate ) }
-					/>
-					{ animate === true && (
-						<span>
-							{ 'Here are more animation settings' }
-						</span>
-					) }
-				</PanelBody>
-			</InspectorControls>
+			</TagName>
 		</>
 	)
 }

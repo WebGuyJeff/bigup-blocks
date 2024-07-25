@@ -18,9 +18,34 @@
   "attributes": {
     "animate": {
       "type": "boolean"
+    },
+    "tagName": {
+      "type": "string",
+      "default": "div"
     }
   },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
   "allowedBlocks": [
-    "core/paragraph"
+    "core/buttons",
+    "core/button",
+    "core/pattern",
+    "core/cover",
+    "core/group",
+    "core/heading",
+    "core/image",
+    "core/list",
+    "core/list-item",
+    "core/paragraph",
+    "core/post-featured-image",
+    "core/title",
+    "core/site-tagline",
+    "core/social-link",
+    "core/social-links",
+    "core/spacer"
   ]
 }
