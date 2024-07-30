@@ -19,6 +19,9 @@
 			"type": "boolean"
 		}
 	},
+	"supports": {
+		"align": [ "wide", "full" ]
+	},
 	"allowedBlocks": [
 		"core/buttons",
 		"core/button",

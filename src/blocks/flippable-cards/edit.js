@@ -28,38 +28,38 @@ export default function Edit() {
 						<div className='flippableCard_front'>
 							<h3>Card Title</h3>
 							<p>Some awesome card tagline!</p>
+							<div className='flippableCard_tapIcon'>
+								<FingerTap />
+							</div>
 						</div>
 						<div className='flippableCard_back'>
 							<p>Card body content which expands on the front of the card.</p>
-						</div>
-						<div className='flippableCard_tapIcon'>
-							<FingerTap />
 						</div>
 					</div>
 
-					<div className='flippableCard_card'>
+					<div className='flippableCard'>
 						<div className='flippableCard_front'>
 							<h3>Card Title</h3>
 							<p>Some awesome card tagline!</p>
+							<div className='flippableCard_tapIcon'>
+								<FingerTap />
+							</div>
 						</div>
 						<div className='flippableCard_back'>
 							<p>Card body content which expands on the front of the card.</p>
-						</div>
-						<div className='flippableCard_tapIcon'>
-							<FingerTap />
 						</div>
 					</div>
 
-					<div className='flippableCard_card'>
+					<div className='flippableCard'>
 						<div className='flippableCard_front'>
 							<h3>Card Title</h3>
 							<p>Some awesome card tagline!</p>
+							<div className='flippableCard_tapIcon'>
+								<FingerTap />
+							</div>
 						</div>
 						<div className='flippableCard_back'>
 							<p>Card body content which expands on the front of the card.</p>
-						</div>
-						<div className='flippableCard_tapIcon'>
-							<FingerTap />
 						</div>
 					</div>
 

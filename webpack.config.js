@@ -12,6 +12,7 @@ module.exports = {
 		...wordpressConfig.entry(),
 		// 'example/output': './path/to/dir/entrypoint.js',
 		'js/bigup-blocks-editor': path.join( __dirname, '/src/js/bigup-blocks-editor' ),
+		'css/bigup-blocks-common-styles': path.join( __dirname, '/src/css/bigup-blocks-common-styles' ),
 	},
 	plugins: [
 		...wordpressConfig.plugins,

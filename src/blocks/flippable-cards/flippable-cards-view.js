@@ -16,8 +16,8 @@ const animateRollBy = () => {
 	window.onload = () => {
 	
 		const tumbleweedID = '#svg_tumbleweed'
-		const cardClass    = '.flippableCard_card'
-		const flipClass    = '.flippableCard_card' // Make unique to toggle animation per card.
+		const cardClass    = '.flippableCard'
+		const flipClass    = '.flippableCard' // Make unique to toggle animation per card.
 		const iconClass    = '.flippableCard_tapIcon'
 		
 		const target    = document.querySelector( tumbleweedID )
@@ -158,4 +158,4 @@ const animateRollBy = () => {
 
 }
 
-export { animateRollBy }
+animateRollBy()
