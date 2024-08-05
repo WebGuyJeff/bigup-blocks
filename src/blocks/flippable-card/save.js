@@ -1,6 +1,6 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor'
 import {
-	Tumbleweed
+	FingerTap
 } from './svg'
 
 /**
@@ -12,19 +12,27 @@ import {
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
-
-    const blockProps = useBlockProps.save( {
-        className: 'flippableCards',
+export default function save( { attributes } ) {
+	const {
+		animate,
+		title,
+		tagline
+	} = attributes;
+	const blockProps = useBlockProps.save( {
+        className: animate ? 'flippableCard flip' : 'flippableCard',
     } )
 
 	return (
 		<div { ...blockProps }>
-			<div className='rollByAnimation_container'>
-				<div className='flippableCards_container'>
-					<InnerBlocks.Content />
+			<div className='flippableCard_front'>
+				<h3>{ title }</h3>
+				<p>{ tagline }</p>
+				<div className='flippableCard_tapIcon'>
+					<FingerTap />
 				</div>
-				<Tumbleweed />
+			</div>
+			<div className='flippableCard_back'>
+				<InnerBlocks.Content />
 			</div>
 		</div>
 	)

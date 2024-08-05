@@ -13,6 +13,8 @@ module.exports = {
 		// 'example/output': './path/to/dir/entrypoint.js',
 		'js/bigup-blocks-editor': path.join( __dirname, '/src/js/bigup-blocks-editor' ),
 		'css/bigup-blocks-common-styles': path.join( __dirname, '/src/css/bigup-blocks-common-styles' ),
+		'third-party/js/gsap.min': path.join( __dirname, '/node_modules/gsap/dist/gsap.min' ),
+		'third-party/js/ScrollTrigger.min': path.join( __dirname, '/node_modules/gsap/dist/ScrollTrigger.min' ),
 	},
 	plugins: [
 		...wordpressConfig.plugins,

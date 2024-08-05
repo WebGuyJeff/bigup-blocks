@@ -4,5 +4,5 @@
  * @link https://metabox.io/modernizing-javascript-code-in-wordpress/
  */
 
-import './_palette.scss'
-import './_borders.scss'
+import './common/_palette.scss'
+import './common/_borders.scss'

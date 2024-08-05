@@ -1,8 +1,7 @@
 import { __ } from '@wordpress/i18n'
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor'
 import {
-	Tumbleweed,
-	FingerTap
+	Tumbleweed
 } from './svg'
 
 /**
@@ -13,8 +12,15 @@ import {
  *
  * @return {WPElement} Element to render.
  */
+
+const template = [
+	[ 'bigup-blocks/flippable-card' ],
+	[ 'bigup-blocks/flippable-card' ],
+	[ 'bigup-blocks/flippable-card' ]
+]
+
 export default function Edit() {
-	
+
 	const blockProps = useBlockProps( {
         className: 'flippableCards',
     } )
@@ -23,46 +29,9 @@ export default function Edit() {
 		<div { ...blockProps }>
 			<div className='rollByAnimation_container'>
 				<div className='flippableCards_container'>
-
-					<div className='flippableCard'>
-						<div className='flippableCard_front'>
-							<h3>Card Title</h3>
-							<p>Some awesome card tagline!</p>
-							<div className='flippableCard_tapIcon'>
-								<FingerTap />
-							</div>
-						</div>
-						<div className='flippableCard_back'>
-							<p>Card body content which expands on the front of the card.</p>
-						</div>
-					</div>
-
-					<div className='flippableCard'>
-						<div className='flippableCard_front'>
-							<h3>Card Title</h3>
-							<p>Some awesome card tagline!</p>
-							<div className='flippableCard_tapIcon'>
-								<FingerTap />
-							</div>
-						</div>
-						<div className='flippableCard_back'>
-							<p>Card body content which expands on the front of the card.</p>
-						</div>
-					</div>
-
-					<div className='flippableCard'>
-						<div className='flippableCard_front'>
-							<h3>Card Title</h3>
-							<p>Some awesome card tagline!</p>
-							<div className='flippableCard_tapIcon'>
-								<FingerTap />
-							</div>
-						</div>
-						<div className='flippableCard_back'>
-							<p>Card body content which expands on the front of the card.</p>
-						</div>
-					</div>
-
+					<InnerBlocks
+						template={ template }
+					/>
 				</div>
 				<Tumbleweed />
 			</div>

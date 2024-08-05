@@ -62,21 +62,24 @@ class Init {
 	public function editor_scripts_and_styles() {
 		wp_enqueue_script( 'bigup-blocks-editor_js', BIGUPBLOCKS_URL . 'build/js/bigup-blocks-editor.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/js/bigup-blocks-editor.js' ), true );
 		wp_enqueue_style( 'bigup-blocks-common-styles_css', BIGUPBLOCKS_URL . 'build/css/bigup-blocks-common-styles.css', array(), filemtime( BIGUPBLOCKS_PATH . 'build/css/bigup-blocks-common-styles.css' ), 'all' );
+		if ( has_block( 'bigup-blocks/flippable-cards' ) ) {
+			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'build/third-party/js/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/gsap.min.js' ), true );
+			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'build/third-party/js/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/ScrollTrigger.min.js' ), true );
+		}
 	}
 
 	/**
 	 * Register and enqueue frontend scripts and styles.
 	 */
 	public function frontend_scripts_and_styles() {
+		wp_enqueue_style( 'bigup-blocks-common-styles_css', BIGUPBLOCKS_URL . 'build/css/bigup-blocks-common-styles.css', array(), filemtime( BIGUPBLOCKS_PATH . 'build/css/bigup-blocks-common-styles.css' ), 'all' );
 		if ( has_block( 'bigup-blocks/hero-punch' ) ) {
-			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/gsap.min.js' ), true );
-			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/ScrollTrigger.min.js' ), true );
-			wp_enqueue_style( 'bigup-blocks-common-styles_css', BIGUPBLOCKS_URL . 'build/css/bigup-blocks-common-styles.css', array(), filemtime( BIGUPBLOCKS_PATH . 'build/css/bigup-blocks-common-styles.css' ), 'all' );
+			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'build/third-party/js/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/gsap.min.js' ), true );
+			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'build/third-party/js/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/ScrollTrigger.min.js' ), true );
 		}
 		if ( has_block( 'bigup-blocks/flippable-cards' ) ) {
-			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/gsap.min.js' ), true );
-			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'node_modules/gsap/dist/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'node_modules/gsap/dist/ScrollTrigger.min.js' ), true );
-			wp_enqueue_style( 'bigup-blocks-common-styles_css', BIGUPBLOCKS_URL . 'build/css/bigup-blocks-common-styles.css', array(), filemtime( BIGUPBLOCKS_PATH . 'build/css/bigup-blocks-common-styles.css' ), 'all' );
+			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'build/third-party/js/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/gsap.min.js' ), true );
+			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'build/third-party/js/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/ScrollTrigger.min.js' ), true );
 		}
 	}
 }

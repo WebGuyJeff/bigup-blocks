@@ -53,11 +53,7 @@ const heroPunchAnimation = () => {
 			.timeline()
 			.addLabel( 'fadeIn' )
 			.set( content, { y: '-100vh', opacity: 0 } )
-			.to(
-				content,
-				{ y: 0, opacity: 1, duration: 1, ease: 'power4.out' },
-				'>'
-			)
+			.to( content, { y: 0, opacity: 1, duration: 1, ease: 'power4.out' }, '>' )
 			.addLabel( 'punch' )
 			.set( fist, { visibility: 'visible' } )
 			.to( fist, { top: 0, duration: 0.3, ease: 'elastic.out(1,0.8)' } )
@@ -66,80 +62,18 @@ const heroPunchAnimation = () => {
 			// Fly up.
 			.set( hands, { visibility: 'hidden' }, '<-2.02' )
 			.set( sign, { position: 'absolute', margin: 0 }, '<' )
-			.to(
-				sign,
-				{
-					xPercent: -13,
-					yPercent: -20,
-					scale: 0.1,
-					duration: 1.5,
-					ease: 'power3.out',
-				},
-				'<'
-			)
-			.to(
-				sign,
-				{
-					rotateX: 1080,
-					rotateY: 720,
-					rotateZ: 360,
-					duration: 1.5,
-					ease: 'none',
-				},
-				'<'
-			)
-			.to(
-				me,
-				{
-					xPercent: 10,
-					yPercent: -40,
-					scale: 0.1,
-					duration: 1.5,
-					ease: 'power3.out',
-				},
-				'<'
-			)
+			.to( sign, { xPercent: -13, yPercent: -20, scale: 0.1, duration: 1.5, ease: 'power3.out', }, '<' )
+			.to( sign, { rotateX: 1080, rotateY: 720, rotateZ: 360, duration: 1.5, ease: 'none', }, '<' ) .to( me, { xPercent: 10, yPercent: -40, scale: 0.1, duration: 1.5, ease: 'power3.out', }, '<' )
 			.to( me, { rotateZ: 1440, duration: 1.5, ease: 'none' }, '<' )
 			// Fall down.
-			.to(
-				sign,
-				{ xPercent: -15, yPercent: 10, duration: 1, ease: 'power2.in' },
-				'>-0.6'
-			)
-			.to(
-				sign,
-				{
-					rotateX: 1080,
-					rotateY: 720,
-					scale: 0.001,
-					rotateZ: 360,
-					duration: 1,
-					ease: 'none',
-				},
-				'<'
-			)
-			.to(
-				me,
-				{ xPercent: 10, yPercent: -20, duration: 1, ease: 'power2.in' },
-				'<'
-			)
-			.to(
-				me,
-				{ rotateZ: 1800, scale: 0.001, duration: 1, ease: 'none' },
-				'<'
-			)
+			.to( sign, { xPercent: -15, yPercent: 10, duration: 1, ease: 'power2.in' }, '>-0.6' )
+			.to( sign, { rotateX: 1080, rotateY: 720, scale: 0.001, rotateZ: 360, duration: 1, ease: 'none', }, '<' )
+			.to( me, { xPercent: 10, yPercent: -20, duration: 1, ease: 'power2.in' }, '<' )
+			.to( me, { rotateZ: 1800, scale: 0.001, duration: 1, ease: 'none' }, '<' )
 			// Twinkle.
 			.set( [ star1, star2 ], { scale: 0, visibility: 'visible' } )
-			.to(
-				[ star1, star2 ],
-				{ scale: 1000, rotate: 180, duration: 0.2, ease: 'none' },
-				'>'
-			)
-			.to(
-				[ star1, star2 ],
-				{ scale: 0, rotate: 360, duration: 0.2, ease: 'none' },
-				'>'
-			)
+			.to( [ star1, star2 ], { scale: 1000, rotate: 180, duration: 0.2, ease: 'none' }, '>' )
+			.to( [ star1, star2 ], { scale: 0, rotate: 360, duration: 0.2, ease: 'none' }, '>' )
 			.set( [ star1, star2 ], { visibility: 'hidden', rotate: 0 } )
 			// Hide.
 			.set( content, { visibility: 'hidden' } )
@@ -150,49 +84,22 @@ const heroPunchAnimation = () => {
 	const tlSunMove = () => {
 		const sunMove = gsap
 			.timeline()
-			.set( shadows, {
-				transformOrigin: 'top center',
-				skewX: 55,
-				scaleY: 0.4,
-			} )
-			.to( sun, {
-				keyframes: {
-					x: [
-						0,
-						toVw( mirrorX( sun ) / 2 ),
-						toVw( mirrorX( sun ) ),
-					],
-					easeEach: 'none',
-				},
-			} )
-			.to(
-				sun,
-				{
-					keyframes: {
-						'0%': { marginTop: '3vw' },
-						'50%': { marginTop: '-3vw', ease: 'power2.out' },
-						'100%': { marginTop: '3vw', ease: 'power2.in' },
-					},
-				},
-				'<'
-			)
-			.to(
-				shadows,
-				{
-					keyframes: {
-						skewX: [ 55, 0, -55 ],
-						scaleY: [ 0.4, 0.2, 0.4 ],
-						easeEach: 'none',
-					},
-				},
-				'<'
-			)
-			.fromTo(
-				sky,
-				{ background: skyGradAm },
-				{ ease: 'linear', background: skyGradPm },
-				'<'
-			)
+			.set( shadows, { transformOrigin: 'top center', skewX: 55, scaleY: 0.4, } )
+			.to( sun, { keyframes: {
+				x: [ 0, toVw( mirrorX( sun ) / 2 ), toVw( mirrorX( sun ) ), ],
+				easeEach: 'none',
+			}, } )
+			.to( sun, { keyframes: {
+				'0%': { marginTop: '3vw' },
+				'50%': { marginTop: '-3vw', ease: 'power2.out' },
+				'100%': { marginTop: '3vw', ease: 'power2.in' },
+			}, }, '<' )
+			.to( shadows, { keyframes: {
+				skewX: [ 55, 0, -55 ],
+				scaleY: [ 0.4, 0.2, 0.4 ],
+				easeEach: 'none',
+			}, }, '<' )
+			.fromTo( sky, { background: skyGradAm }, { ease: 'linear', background: skyGradPm }, '<' )
 		return sunMove
 	}
 
