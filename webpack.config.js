@@ -1,4 +1,3 @@
-const path = require( 'path' )
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' )
 // @wordpress/scripts config.
 const wordpressConfig = require( '@wordpress/scripts/config/webpack.config' )
@@ -11,15 +10,15 @@ module.exports = {
 		// @wordpress/scripts helper which generates entry points from any '**/block.json' in 'src'.
 		...wordpressConfig.entry(),
 		// 'example/output': './path/to/dir/entrypoint.js',
-		'js/bigup-blocks-editor': path.join( __dirname, '/src/js/bigup-blocks-editor' ),
-		'css/bigup-blocks-common-styles': path.join( __dirname, '/src/css/bigup-blocks-common-styles' ),
-		'third-party/js/gsap.min': path.join( __dirname, '/node_modules/gsap/dist/gsap.min' ),
-		'third-party/js/ScrollTrigger.min': path.join( __dirname, '/node_modules/gsap/dist/ScrollTrigger.min' ),
+		'js/bigup-blocks-editor': './src/js/bigup-blocks-editor.js',
+		'css/bigup-blocks-common-styles': './src/css/bigup-blocks-common-styles.scss',
+		'third-party/js/gsap.min': './node_modules/gsap/dist/gsap.min.js',
+		'third-party/js/ScrollTrigger.min': './node_modules/gsap/dist/ScrollTrigger.min.js',
 	},
 	plugins: [
 		...wordpressConfig.plugins,
 		new BrowserSyncPlugin( {
-			proxy: 'localhost:8001', // Live WordPress site. Using IP breaks it.
+			proxy: 'localhost:6969', // Live WordPress site. Using IP breaks it.
 			ui: { port: 3001 }, // BrowserSync UI.
 			port: 3000, // Dev port on localhost.
 			logLevel: 'debug',
@@ -28,6 +27,7 @@ module.exports = {
 			files: [
 				'src/**',
 				'classes/**',
+				'dashicons/**',
 				'**/**.json'
 			]
 		} )
