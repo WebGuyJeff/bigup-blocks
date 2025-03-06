@@ -79,7 +79,7 @@ const animateRollBy = () => {
 					// start: [trigger element position] [viewport position].
 					start: 'top center'
 				} } )
-				.call( removeListeners, null, 0 )
+				// .call( removeListeners, null, 0 )
 				.add( getRollWeedTween() )
 				.add( getSpinCardsTween(), getRollTime() * .33 )
 				.call( addListeners, null, '+=0.5' )
