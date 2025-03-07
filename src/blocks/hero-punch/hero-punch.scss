@@ -49,11 +49,10 @@
 					.contentWrapper {
 						display: flex;
 						position: relative;
-						height: 96vh;
-						max-width: 30em;
+						height: 100vh;
 						margin: auto;
-						margin-top: 2em;
-						margin-bottom: 2em;
+						margin-top: 1em;
+						margin-bottom: 1em;
 						
 						.star {
 							position: absolute;
@@ -67,10 +66,6 @@
 							z-index: 1;
 							margin: auto;
 							filter: drop-shadow(3px 8px 8px #0004);
-							
-							@media ( max-width: 317px ) {
-								padding: 0 1em;
-							}
 							
 							.styledBox_pinToTop {
 								display: flex;

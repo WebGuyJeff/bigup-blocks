@@ -28,7 +28,7 @@ const template = [
 				border: { width: '1px', radius: '1em' }
 			},
 			backgroundColor: 'wgj-fg-alt',
-			layout: { type: 'constrained' }
+			layout: { type: 'constrained', contentSize: '30em', wideSize: '30em' }
 		},
 		[
 			[ 'core/heading', { level: 1, content: __( 'Title', 'bigup-blocks' ) } ],
