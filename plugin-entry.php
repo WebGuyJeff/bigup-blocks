@@ -5,7 +5,7 @@ namespace BigupWeb\Bigup_Blocks;
  * Plugin Name: Bigup Web: Bigup Blocks
  * Plugin URI: https://jeffersonreal.uk
  * Description: A collection of Gutenberg blocks.
- * Version: 0.0.1
+ * Version: 0.0.2
  * Author: Jefferson Real
  * Author URI: https://jeffersonreal.uk
  * License: GPL3
