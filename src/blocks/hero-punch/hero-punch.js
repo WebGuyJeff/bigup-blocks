@@ -16,8 +16,6 @@ import {
 console.log( metadata.name + ' BLOCK LOADED' )
 
 
-
-
 /**
  * Register the block.
  */

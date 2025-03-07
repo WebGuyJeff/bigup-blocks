@@ -1,14 +1,9 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor'
 import {
-	Clouds,
-	DesertFills,
-	DesertFurniture,
-	DesertSand,
 	Fist,
 	GrabhandLeft,
 	GrabhandRight,
 	MeToon,
-	Sun,
 	Star
 } from './svg'
 
@@ -23,41 +18,32 @@ import {
  */
 
 export default function save( { attributes } ) {
-    const blockProps = useBlockProps.save( { className: 'heroPunch' } )
+    const blockProps = useBlockProps.save( { className: 'punch' } )
 	const { tagName: TagName = 'div' } = attributes;
 
 	return (
-		<TagName { ...blockProps }>
-			<div className='scrollTriggerParent'>
-				<div className='scrollTriggerChild'>
-					<div className='sectionGrid'>
-						<div className='landing_content'>
-							<div className='sign '>
-								<div className='sign_pinSignTop'>
-									<GrabhandLeft />
-									<GrabhandRight />
-									<div className='star star-2'>
+		<TagName {...blockProps}>
+			<div className='scrollTrigger_parent'>
+				<div className='scrollTrigger_child'>
+					<div className='sectionGrid_parent'>
+						<div className='sectionGrid_child'>
+							<div className='contentWrapper'>
+								<div className='styledBox'>
+									<div className='styledBox_pinToTop'>
+										<GrabhandLeft />
+										<GrabhandRight />
+										<div className='star star-2'>
+											<Star />
+										</div>
+									</div>
+									<InnerBlocks.Content />
+								</div>
+								<div className='contentWrapper_pinToRight'>
+									<MeToon />
+									<div className='star star-1'>
 										<Star />
 									</div>
 								</div>
-								<div className='copy'>
-									<InnerBlocks.Content />
-								</div>
-							</div>
-							<div className='svgMe_container'>
-								<MeToon />
-								<div className='star star-1'>
-									<Star />
-								</div>
-							</div>
-						</div>
-						<div className='landing_backdrop'>
-							<DesertFills />
-							<Sun />
-							<Clouds />
-							<div className='desert_terrain'>
-								<DesertSand />
-								<DesertFurniture />
 							</div>
 						</div>
 					</div>

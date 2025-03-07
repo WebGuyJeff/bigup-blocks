@@ -3,32 +3,39 @@ import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-
 import { ToggleControl, PanelBody, SelectControl } from '@wordpress/components'
 import { useState } from '@wordpress/element'
 import {
-	Clouds,
-	DesertFills,
-	DesertFurniture,
-	DesertSand,
 	Fist,
 	GrabhandLeft,
 	GrabhandRight,
 	MeToon,
-	Sun,
 	Star
 } from './svg'
 
 const template = [
 	[ 'core/group',
 		{
+			lock: { remove:true, move:true },
 			className: 'copy',
-			style: { spacing: { padding: { top: 'var:preset|spacing|50', bottom: 'var:preset|spacing|50' } } },
-			lock: { remove: true, move: true },
+			style: {
+				spacing: {
+					padding: {
+						top: 'var:preset|spacing|50',
+						bottom: 'var:preset|spacing|50',
+						left: 'var:preset|spacing|50',
+						right: 'var:preset|spacing|50'
+					}
+				},
+				margin: { top: '0',bottom: '0'},
+				border: { width: '1px', radius: '1em' }
+			},
+			backgroundColor: 'wgj-fg-alt',
 			layout: { type: 'constrained' }
 		},
 		[
-			[ 'core/heading', { level: 1, content: __( "I'm a Web Developer!", 'bigup-blocks' ) } ],
-			[ 'core/paragraph', { content: __( "I build awesome websites with flashy animation to woo your audience and make them dream about your brand.", 'bigup-blocks' ) } ],
-			[ 'core/buttons', {},
+			[ 'core/heading', { level: 1, content: __( 'Title', 'bigup-blocks' ) } ],
+			[ 'core/paragraph', { content: __( 'Some awesome content to alert the masses of this awesome thing!', 'bigup-blocks' ) } ],
+			[ 'core/buttons', { layout: { type: 'flex', justifyContent: 'center' } },
 				[
-					[ 'core/button', { text: __( "Send me a message", 'bigup-blocks' )	} ]
+					[ 'core/button', { text: __( 'Do button stuff', 'bigup-blocks' )	} ]
 				]
 			]
 		]
@@ -46,7 +53,7 @@ const template = [
  */
 const HTMLParentControls = ( { tagName, onSelectTagName } ) => {
 	return (
-		<InspectorControls group="advanced">
+		<InspectorControls group='advanced'>
 			<SelectControl
 				__nextHasNoMarginBottom
 				__next40pxDefaultSize
@@ -77,7 +84,7 @@ const HTMLParentControls = ( { tagName, onSelectTagName } ) => {
  */
 export default function Edit( { attributes, setAttributes } ) {
 	const [ animate, setAnimate ] = useState( true )
-	const blockProps = useBlockProps( { className: 'heroPunch' } )
+	const blockProps = useBlockProps( { className: 'punch' } )
 	const { tagName: TagName = 'div' } = attributes;
 	
 	return (
@@ -106,36 +113,29 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 
 			<TagName {...blockProps}>
-				<div className='scrollTriggerParent'>
-					<div className='scrollTriggerChild'>
-						<div className='sectionGrid'>
-							<div className='landing_content'>
-								<div className='sign '>
-									<div className='sign_pinSignTop'>
-										<GrabhandLeft />
-										<GrabhandRight />
-										<div className='star star-2'>
+				<div className='scrollTrigger_parent'>
+					<div className='scrollTrigger_child'>
+						<div className='sectionGrid_parent'>
+							<div className='sectionGrid_child'>
+								<div className='contentWrapper'>
+									<div className='styledBox'>
+										<div className='styledBox_pinToTop'>
+											<GrabhandLeft />
+											<GrabhandRight />
+											<div className='star star-2'>
+												<Star />
+											</div>
+										</div>
+										<InnerBlocks
+											template={ template }
+										/>
+									</div>
+									<div className='contentWrapper_pinToRight'>
+										<MeToon />
+										<div className='star star-1'>
 											<Star />
 										</div>
 									</div>
-									<InnerBlocks
-										template={ template }
-									/>
-								</div>
-								<div className='svgMe_container'>
-									<MeToon />
-									<div className='star star-1'>
-										<Star />
-									</div>
-								</div>
-							</div>
-							<div className='landing_backdrop'>
-								<DesertFills />
-								<Sun />
-								<Clouds />
-								<div className='desert_terrain'>
-									<DesertSand />
-									<DesertFurniture />
 								</div>
 							</div>
 						</div>
