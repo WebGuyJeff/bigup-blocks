@@ -18,9 +18,7 @@ export default function Save( attributes ) {
 	/**
 	 * Add classname(s) to props
 	 */
-	const blockProps = useBlockProps.save( {
-		className: 'bigupAnchor',
-	} )
+	const blockProps = useBlockProps.save()
 
 	return (
 		<div { ...blockProps }>
