@@ -5,68 +5,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.bigupAnchor {
-	position: relative;
-	max-width: 100%;
-	padding-right: 24px;
-	padding-left: 24px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.bigupAnchor .bigupAnchor {
-	padding-left: 0;
-	padding-right: 0;
-	padding-bottom: 0;
-	padding-top: 0;
-}
-
-@media (min-width: 768px) {
-
-	.bigupAnchor {
-		width: 100%;
-	}
-}
-
-@media (min-width: 1024px) {
-
-	.bigupAnchor {
-		width: 984px;
-	}
-}
-
-@media (min-width: 1280px) {
-
-	.bigupAnchor {
-		width: 1160px;
-	}
-}
-
-@media (min-width: 1536px) {
-
-	.bigupAnchor {
-		width: 1280px;
-	}
-}
-
-.bigupAnchor-full {
-	width: 100%;
-}
-
-.bigupAnchor-narrow {
-	width: 100%;
-}
-
-@media (min-width: 768px) {
-
-	.bigupAnchor-narrow {
-		width: 768px;
-	}
-}
-
-@media (min-width: 1536px) {
-
-	.bigupAnchor-narrow {
-		width: 1024px;
-	}
+.wp-block-bigup-blocks-anchor {
+	display: inline-block;
+	pointer-events: auto;
 }

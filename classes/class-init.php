@@ -60,9 +60,17 @@ class Init {
 	 * Register and enqueue editor scripts and styles.
 	 */
 	public function editor_scripts_and_styles() {
+		$script_asset_path = BIGUPBLOCKS_PATH . 'build/js/bigup-blocks-editor.asset.php';
+		if ( ! file_exists( $script_asset_path ) ) {
+			throw new Error(
+				'You need to run `npm start` or `npm run build` for the block first.'
+			);
+		}
+		$script_asset = require $script_asset_path;
+
 		wp_enqueue_script( 'bigup-blocks-editor_js', BIGUPBLOCKS_URL . 'build/js/bigup-blocks-editor.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/js/bigup-blocks-editor.js' ), true );
 		wp_enqueue_style( 'bigup-blocks-common-styles_css', BIGUPBLOCKS_URL . 'build/css/bigup-blocks-common-styles.css', array(), filemtime( BIGUPBLOCKS_PATH . 'build/css/bigup-blocks-common-styles.css' ), 'all' );
-		if ( has_block( 'bigup-blocks/flippable-cards' ) ) {
+		if ( has_block( 'bigup-blocks/flippable-cards' ) || has_block( 'bigup-blocks/hero-punch' ) ) {
 			wp_enqueue_script( 'gsap', BIGUPBLOCKS_URL . 'build/third-party/js/gsap.min.js', array(), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/gsap.min.js' ), true );
 			wp_enqueue_script( 'gsap-scrolltrigger', BIGUPBLOCKS_URL . 'build/third-party/js/ScrollTrigger.min.js', array( 'gsap' ), filemtime( BIGUPBLOCKS_PATH . 'build/third-party/js/ScrollTrigger.min.js' ), true );
 		}

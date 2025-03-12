@@ -13,25 +13,24 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  */
 export default function Save( attributes ) {
 
-	/* jeffDebug */
-	/* Why is attributes double-nested as attributes.attributes? */
-	/* This is not the case in edit.js */
-
-	/**
-	 * Wp attributes are an alias for React props.
-	 */
-	const { anchorClasses } = attributes.attributes;
+	const { url, openInNewTab, id } = attributes.attributes;
 
 	/**
 	 * Add classname(s) to props
 	 */
-	const blockProps = useBlockProps.save({
-		className: anchorClasses,
-	});
+	const blockProps = useBlockProps.save( {
+		className: 'bigupAnchor',
+	} )
 
 	return (
-		<a {...blockProps}>
-			<InnerBlocks.Content />
-		</a>
+		<div { ...blockProps }>
+			<a
+				href={ url }
+				target={ openInNewTab ? '_blank' : '_self' }
+				id={ id }
+			>
+				<InnerBlocks.Content />
+			</a>
+		</div>
 	);
 }

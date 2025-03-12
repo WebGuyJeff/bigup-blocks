@@ -18,7 +18,7 @@ const registerCollection = () => {
 	registerBlockCollection(
 		'bigup-blocks', // Block namespace.
 		{
-			title: __( 'Bigup Blocks' ),
+			title: __( 'Bigup Blocks', 'bigup-blocks' ),
 			icon: Logo
 		}
 	)

@@ -8,7 +8,9 @@
 export default function Example() {
 	return (
 		attributes = {
-			anchorClasses: 'bigupAnchor',
+			href: 'https://example.com',
+			target: true,
+			id: 'Example Link'
 		}
 	);
 }

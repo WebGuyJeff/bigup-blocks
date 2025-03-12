@@ -6,6 +6,7 @@
 	"title": "Anchor",
 	"category": "design",
 	"description": "An anchor element.",
+	"icon": "admin-links",
 	"supports": {
 		"html": false
 	},
@@ -14,10 +15,17 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"anchorClasses": {
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"id": {
 			"type": "string",
-			"enum": [ "bigupAnchor", "bigupAnchor bigupAnchor-full", "bigupAnchor bigupAnchor-narrow" ],
-			"default": "bigupAnchor"
+			"default": ""
+		},
+		"url": {
+			"type": "string",
+			"default": ""
 		}
 	}
 }

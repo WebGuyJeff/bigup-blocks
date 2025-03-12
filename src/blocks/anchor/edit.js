@@ -7,7 +7,7 @@ import {
 	InnerBlocks,
 	InspectorControls,
 } from '@wordpress/block-editor';
-import { SelectControl, PanelBody, PanelRow } from '@wordpress/components';
+import { ToggleControl, TextControl, PanelBody, PanelRow } from '@wordpress/components';
 
 /**
  * Import local editor Styles.
@@ -26,42 +26,22 @@ import './editor.scss';
  * @param {string} clientId - Block client ID.
  * @param {string} attributes.anchorClasses - Anchor classnames.
  */
-export default function Edit({
+export default function Edit( {
 	attributes,
 	setAttributes,
 	isSelected,
 	clientId,
-}) {
-	const { anchorClasses } = attributes;
+} ) {
 
-	/**
-	 * Control options.
-	 *
-	 * These are the settings label/values to populate the dropdown control.
-	 *
-	 */
-	const widthOptions = [
-		{ label: 'Default', value: 'bigupAnchor' },
-		{
-			label: 'Full-width',
-			value: 'bigupAnchor bigupAnchor-full',
-		},
-		{ label: 'Narrow', value: 'bigupAnchor bigupAnchor-narrow' },
-	];
-
-	/**
-	 * Set block attributes.
-	 */
-	const blockProps = useBlockProps({
-		className: anchorClasses,
-	});
+	const { url, openInNewTab, id } = attributes;
+	const blockProps             = useBlockProps()
 
 	/**
 	 * Set block attributes with 'selected' state.
 	 */
-	const blockPropsSelected = useBlockProps({
-		className: anchorClasses + ' bigupAnchor-selected',
-	});
+	const blockPropsSelected = useBlockProps( {
+		className: 'selected',
+	} );
 
 	/**
 	 * Flag to check if innerBlocks is populated.
@@ -80,36 +60,65 @@ export default function Edit({
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Anchor Width', 'bigup-blocks' )} initialOpen={true}>
+				<PanelBody
+					title={ __( 'Anchor Settings', 'bigup-blocks' ) }
+					initialOpen={true}
+				>
 					<PanelRow>
-						<SelectControl
-							label="width"
-							labelPosition="Left"
-							title="anchorClasses"
-							value={anchorClasses}
-							options={widthOptions}
-							onChange={(value) =>
-								setAttributes({ anchorClasses: value })
-							}
+						<ToggleControl
+							label='Open in new tab?'
+							help={openInNewTab ? 'Yes' : 'No'}
+							checked={openInNewTab}
+							onChange={ ( newOpenInNewTab ) => setAttributes( { openInNewTab: newOpenInNewTab } ) }
 						/>
+					</PanelRow>
+					<PanelRow>
+						<fieldset>
+							<TextControl
+								label={ __( 'URL' ) }
+								help={ 'URL link to the target resource' }
+								value={ url }
+								onChange={ ( newUrl ) => setAttributes( { url: newUrl } ) }
+							/>
+						</fieldset>
+					</PanelRow>
+					<PanelRow>
+						<fieldset>
+							<TextControl
+								label={ __( 'ID attribute' ) }
+								help={ 'Element ID for specific styling or as a target location in the page' }
+								value={ id }
+								onChange={ ( newId ) => setAttributes( { id: newId } ) }
+							/>
+						</fieldset>
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
 
-			{isSelected && (
-				<div {...blockPropsSelected}>
-					<InnerBlocks />
+			{ isSelected && (
+				<div { ...blockPropsSelected }>
+					<a
+						target={ openInNewTab ? '_blank' : '_self' }
+						id={ id }
+					>
+						<InnerBlocks />
+					</a>
 				</div>
-			)}
+			) }
 
-			{!isSelected && (
-				<div {...blockProps}>
-					{!hasInnerBlocks() && (
-						<a className="bigupAnchor-empty">
-							{ __("I'm an anchor - put some blocks inside me!", 'bigup-blocks' ) }
-						</a>
-					)}
-					<InnerBlocks />
+			{ !isSelected && (
+				<div { ...blockProps }>
+					<a
+						target={ openInNewTab ? '_blank' : '_self' }
+						id={ id }
+					>
+						{ !hasInnerBlocks() && (
+							<span className="emptyWarning">
+								{ __("Empty anchor block!", 'bigup-blocks' ) }
+							</span>
+						) }
+						<InnerBlocks />
+					</a>
 				</div>
 			)}
 		</>
