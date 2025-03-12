@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "bigup-blocks/mortgage-calc",
   "version": "0.0.1",
   "title": "Mortgage Calculator",
