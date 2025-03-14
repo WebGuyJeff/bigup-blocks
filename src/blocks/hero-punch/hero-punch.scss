@@ -12,7 +12,7 @@
 	overflow-x: clip; // hidden breaks position:sticky on children.
 	
 	.scrollTrigger_parent {
-		height: calc( 100vh + 1000px );
+		height: calc( 100vh + 800px );
 		
 		.scrollTrigger_child {
 			width: 100%;
