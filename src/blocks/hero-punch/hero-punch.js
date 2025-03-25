@@ -13,7 +13,6 @@ import {
  * console.log( metadata.name + ' BLOCK LOADED' )
  * RUN IN CONSOLE TO SEE REGISTERED BLOCKS: wp.blocks.getBlockTypes() 
  */
-console.log( metadata.name + ' BLOCK LOADED' )
 
 
 /**
