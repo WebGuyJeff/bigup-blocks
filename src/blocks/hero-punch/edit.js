@@ -27,7 +27,7 @@ const template = [
 				margin: { top: '0',bottom: '0'},
 				border: { width: '1px', radius: '1em' }
 			},
-			backgroundColor: 'wgj-fg-alt',
+			topColour: 'wgj-fg-alt',
 			layout: { type: 'constrained', contentSize: '30em', wideSize: '30em' }
 		},
 		[

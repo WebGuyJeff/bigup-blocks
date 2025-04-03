@@ -17,9 +17,44 @@
   "editorStyle": "file:./vector-shapes-editor.css",
   "style": "file:./vector-shapes.css",
   "attributes": {
-    "currentColor": {
+    "variation": {
       "type": "string",
-      "default": "#333"
+      "default": "wave"
+    },
+    "bottomColour": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "svg",
+      "attribute": "data-top-colour",
+      "default": "#999"
+    },
+    "topColour": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "svg",
+      "attribute": "data-bottom-colour",
+      "default": "#ccc"
+    },
+    "lineColor": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "svg",
+      "attribute": "data-line-colour",
+      "default": "#666"
+    },
+    "lineWidth": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "svg",
+      "attribute": "data-line-width",
+      "default": "1rem"
+    },
+    "lineVisible": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "svg",
+      "attribute": "data-line-visible",
+      "default": "visible"
     }
   }
 }

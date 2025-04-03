@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n'
 import { useBlockProps, useSetting, InspectorControls } from '@wordpress/block-editor'
-import { PanelBody, ColorPalette, } from '@wordpress/components'
-import { Wave } from './svg'
+import { Panel, PanelBody, PanelRow, SelectControl, ColorPalette, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components'
+import { Wave, Squiggle } from './svg'
 import './vector-shapes-editor.scss'
 
 /**
@@ -12,34 +12,108 @@ import './vector-shapes-editor.scss'
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes } ) {
-	const { currentColor } = attributes
+export default function Edit( props ) {
+
+	const { attributes, setAttributes } = props
+
+	const blockName = props.name
+
+	const {
+		variation,
+		bottomColour,
+		topColour,
+		lineColor,
+		lineVisible,
+		lineWidth
+	} = attributes
+
+	const blockVariations = Object.values( wp.blocks.getBlockType( blockName ).variations )
 
 	const blockProps = useBlockProps( {
+		className: 'alignfull',
 		style: {
-			'color': currentColor,
-			'display': 'block'
-		},
-		className: 'alignfull'
+			"--bottomColour": bottomColour,
+			"--topColour": topColour,
+			"--lineColor": lineColor,
+			"--lineVisible": lineVisible,
+			"--lineWidth": lineWidth
+		}
 	} )
+
+	const blockDataProps = {
+		"data-top-colour": bottomColour,
+		"data-bottom-colour": topColour,
+		"data-line-colour": lineColor,
+		"data-line-visible": lineVisible,
+		"data-line-width": lineWidth
+	}
+
+	// Variation select control values.
+	const variationOptions = []
+	blockVariations.forEach( variation => variationOptions.push( { value: variation.name, label: variation.title } ) )
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody>
-					<div>
-						<p>Vector Colour</p>
+				<Panel>
+					<PanelBody>
+						<SelectControl
+						label={ __( 'Select vector', 'bigup-blocks' ) }
+						labelPosition="top"
+						title={ __( 'Select vector', 'bigup-blocks' ) }
+						value={ variation }
+						options={ variationOptions }
+						onChange={ ( value ) => setAttributes( { variation: value } ) }
+						__nextHasNoMarginBottom={ true }
+					/>
+					</PanelBody>
+				</Panel>
+				<Panel>
+					<PanelBody>
+						<PanelRow><h2>{ __( 'Colours', 'bigup-blocks' ) }</h2></PanelRow>
+						<PanelRow>{ __( 'Top', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
-							value={ currentColor }
+							value={ topColour }
 							colors={ [ ...useSetting( 'color.palette' ) ] }
-							onChange={ ( value ) => setAttributes( { currentColor: value } ) }
+							onChange={ ( value ) => setAttributes( { topColour: value } ) }
 						/>
-					</div>
-				</PanelBody>
+						<PanelRow>{ __( 'Bottom', 'bigup-blocks' ) }</PanelRow>
+						<ColorPalette
+							value={ bottomColour }
+							colors={ [ ...useSetting( 'color.palette' ) ] }
+							onChange={ ( value ) => setAttributes( { bottomColour: value } ) }
+						/>
+					</PanelBody>
+				</Panel>
+				<Panel>
+					<PanelBody>
+						<PanelRow><h2>{ __( 'Line Settings', 'bigup-blocks' ) }</h2></PanelRow>
+						<ToggleControl
+							label='Show Line'
+							help={ lineVisible ? __( 'Yes', 'bigup-blocks' ) : __( 'No', 'bigup-blocks' ) }
+							checked={ lineVisible === 'visible' ? true : false }
+							onChange={ ( value ) => setAttributes( { lineVisible: value ? 'visible' : 'hidden' } ) }
+						/>
+						<PanelRow>{ __( 'Width', 'bigup-blocks' ) }</PanelRow>
+						<UnitControl
+							value={ lineWidth }
+							onChange={ ( value ) => setAttributes( { lineWidth: value } ) }
+							__next40pxDefaultSize
+						/>
+						<PanelRow>{ __( 'Colour', 'bigup-blocks' ) }</PanelRow>
+						<ColorPalette
+							value={ lineColor }
+							colors={ [ ...useSetting( 'color.palette' ) ] }
+							onChange={ ( value ) => setAttributes( { lineColor: value } ) }
+						/>
+					</PanelBody>
+				</Panel>
 			</InspectorControls>
 
-			<Wave { ...blockProps } />
-
+			<div { ...blockProps }>
+				{ variation === 'wave' && <Wave { ...blockDataProps }/> }
+				{ variation === 'squiggle' && <Squiggle { ...blockDataProps }/> }
+			</div>
 		</>
 	)
 }

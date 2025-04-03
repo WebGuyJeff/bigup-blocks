@@ -1,5 +1,5 @@
 import { useBlockProps } from '@wordpress/block-editor'
-import { Wave } from './svg'
+import { Wave, Squiggle } from './svg'
 
 /**
  * The save function defines the way in which the different attributes should
@@ -11,16 +11,38 @@ import { Wave } from './svg'
  * @return {WPElement} Element to render.
  */
 export default function save( { attributes } ) {
+		const {
+			variation,
+			bottomColour,
+			topColour,
+			lineColor,
+			lineVisible,
+			lineWidth
+		} = attributes
+	
+		const blockProps = useBlockProps.save( {
+			className: 'alignfull',
+			style: {
+				"--bottomColour": bottomColour,
+				"--topColour": topColour,
+				"--lineColor": lineColor,
+				"--lineVisible": lineVisible,
+				"--lineWidth": lineWidth
+			}
+		} )
 
-	const blockProps = useBlockProps.save( {
-		style: {
-			'color': attributes.currentColor,
-			'display': 'block'
-		},
-		className: 'alignfull'
-	} )
+	const blockDataProps = {
+		"data-top-colour": bottomColour,
+		"data-bottom-colour": topColour,
+		"data-line-colour": lineColor,
+		"data-line-visible": lineVisible,
+		"data-line-width": lineWidth
+	}
 
 	return (
-		<Wave { ...blockProps } />
+		<div { ...blockProps }>
+			{ variation === 'wave' && <Wave { ...blockDataProps }/> }
+			{ variation === 'squiggle' && <Squiggle { ...blockDataProps }/> }
+		</div>
 	)
 }

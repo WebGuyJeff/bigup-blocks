@@ -5,6 +5,7 @@ import './vector-shapes.scss'
 import Edit from './edit'
 import save from './save'
 import metadata from './block.json'
+import { Variations } from './variations'
 
 /*
  * Debug.
@@ -19,14 +20,7 @@ import metadata from './block.json'
 registerBlockType( metadata.name, {
 	...metadata,
 	icon: Logo,
-
-	/**
-	 * @see ./edit.js
-	 */
+	variations: Variations,
 	edit: Edit,
-
-	/**
-	 * @see ./save.js
-	 */
 	save,
 } )
