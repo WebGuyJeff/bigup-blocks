@@ -1,7 +1,6 @@
 import { __ } from '@wordpress/i18n'
-import { useBlockProps, useSetting, InspectorControls } from '@wordpress/block-editor'
+import { useBlockProps, useSetting, InspectorControls, InnerBlocks } from '@wordpress/block-editor'
 import { Panel, PanelBody, PanelRow, SelectControl, ColorPalette, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components'
-import { Wave, Squiggle } from './svg'
 import './border-editor.scss'
 
 /**
@@ -20,37 +19,37 @@ export default function Edit( props ) {
 
 	const {
 		variation,
-		bottomColour,
-		topColour,
-		lineColor,
-		lineVisible,
-		lineWidth
+		borderClassName,
+		borderColour,
+		borderWidth
 	} = attributes
 
 	const blockVariations = Object.values( wp.blocks.getBlockType( blockName ).variations )
 
 	const blockProps = useBlockProps( {
-		className: 'alignfull',
+		className: borderClassName,
 		style: {
-			"--bottomColour": bottomColour,
-			"--topColour": topColour,
-			"--lineColor": lineColor,
-			"--lineVisible": lineVisible,
-			"--lineWidth": lineWidth
+			"border-color": borderColour,
+			"border-width": borderWidth,
+			"--borderWidth": borderWidth
 		}
 	} )
-
-	const blockDataProps = {
-		"data-top-colour": bottomColour,
-		"data-bottom-colour": topColour,
-		"data-line-colour": lineColor,
-		"data-line-visible": lineVisible,
-		"data-line-width": lineWidth
-	}
 
 	// Variation select control values.
 	const variationOptions = []
 	blockVariations.forEach( variation => variationOptions.push( { value: variation.name, label: variation.title } ) )
+
+	// Changing block variation sets default variation attributes.
+	const onChangeVariation = ( newVariation ) => {
+		blockVariations.forEach( variation => {
+			if ( newVariation === variation.name ) {
+				setAttributes( {
+					variation: newVariation,
+					...variation.attributes
+				} )
+			}
+		} )
+	}
 
 	return (
 		<>
@@ -58,61 +57,38 @@ export default function Edit( props ) {
 				<Panel>
 					<PanelBody>
 						<SelectControl
-						label={ __( 'Select vector', 'bigup-blocks' ) }
+						label={ __( 'Select border', 'bigup-blocks' ) }
 						labelPosition="top"
-						title={ __( 'Select vector', 'bigup-blocks' ) }
+						title={ __( 'Select border', 'bigup-blocks' ) }
 						value={ variation }
 						options={ variationOptions }
-						onChange={ ( value ) => setAttributes( { variation: value } ) }
+						onChange={ ( value ) => onChangeVariation( value ) }
 						__nextHasNoMarginBottom={ true }
 					/>
 					</PanelBody>
 				</Panel>
 				<Panel>
 					<PanelBody>
-						<PanelRow><h2>{ __( 'Colours', 'bigup-blocks' ) }</h2></PanelRow>
-						<PanelRow>{ __( 'Top', 'bigup-blocks' ) }</PanelRow>
+						<PanelRow><h2>{ __( 'Border Settings', 'bigup-blocks' ) }</h2></PanelRow>
+						<PanelRow>{ __( 'Colour', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
-							value={ topColour }
+							value={ borderColour }
 							colors={ [ ...useSetting( 'color.palette' ) ] }
-							onChange={ ( value ) => setAttributes( { topColour: value } ) }
-						/>
-						<PanelRow>{ __( 'Bottom', 'bigup-blocks' ) }</PanelRow>
-						<ColorPalette
-							value={ bottomColour }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
-							onChange={ ( value ) => setAttributes( { bottomColour: value } ) }
-						/>
-					</PanelBody>
-				</Panel>
-				<Panel>
-					<PanelBody>
-						<PanelRow><h2>{ __( 'Line Settings', 'bigup-blocks' ) }</h2></PanelRow>
-						<ToggleControl
-							label='Show Line'
-							help={ lineVisible ? __( 'Yes', 'bigup-blocks' ) : __( 'No', 'bigup-blocks' ) }
-							checked={ lineVisible === 'visible' ? true : false }
-							onChange={ ( value ) => setAttributes( { lineVisible: value ? 'visible' : 'hidden' } ) }
+							onChange={ ( value ) => setAttributes( { borderColour: value } ) }
 						/>
 						<PanelRow>{ __( 'Width', 'bigup-blocks' ) }</PanelRow>
 						<UnitControl
-							value={ lineWidth }
-							onChange={ ( value ) => setAttributes( { lineWidth: value } ) }
+							value={ borderWidth }
+							onChange={ ( value ) => setAttributes( { borderWidth: value } ) }
 							__next40pxDefaultSize
 						/>
 						<PanelRow>{ __( 'Colour', 'bigup-blocks' ) }</PanelRow>
-						<ColorPalette
-							value={ lineColor }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
-							onChange={ ( value ) => setAttributes( { lineColor: value } ) }
-						/>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				{ variation === 'wave' && <Wave { ...blockDataProps }/> }
-				{ variation === 'squiggle' && <Squiggle { ...blockDataProps }/> }
+				<InnerBlocks />
 			</div>
 		</>
 	)

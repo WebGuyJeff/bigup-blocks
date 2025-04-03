@@ -14,35 +14,19 @@
 	"attributes": {
 		"variation": {
 			"type": "string",
-			"default": "wave"
+			"default": "wavy"
 		},
-		"colour1": {
+		"borderClassName": {
 			"type": "string",
-			"source": "attribute",
-			"selector": "svg",
-        	"attribute": "data-colour1",
+			"default": "borderWavy"
+		},
+		"borderColour": {
+			"type": "string",
 			"default": "#999"
-		},
-		"colour2": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "svg",
-        	"attribute": "data-colour2",
-			"default": "#ccc"
-		},
-		"colour3": {
-			"type": "string",
-			"source": "attribute",
-			"selector": "svg",
-        	"attribute": "data-colour3",
-			"default": "#666"
 		},
 		"borderWidth": {
 			"type": "string",
-			"source": "attribute",
-			"selector": "svg",
-        	"attribute": "data-line-width",
-			"default": "1rem"
+			"default": "20px"
 		}
 	}
 }

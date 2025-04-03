@@ -3,25 +3,39 @@ import { Logo } from './svg'
 
 const Variations = [
 	{
-		name: 'wave',
-		title: __( 'Wave', 'bigup-forms' ),
+		name: 'wavy',
+		title: __( 'Wavy', 'bigup-blocks' ),
 		icon: Logo,
 		attributes: {
-			'variation': 'wave'
+			'variation': 'wavy',
+			'borderClassName': 'borderWavy'
 		},
 		isActive: ( blockAttributes ) => { 
-			return blockAttributes.variation === 'wave'
+			return blockAttributes.variation === 'wavy'
 		}
 	},
 	{
-		name: 'squiggle',
-		title: __( 'Squiggle', 'bigup-forms' ),
+		name: 'stamp',
+		title: __( 'Stamp', 'bigup-blocks' ),
 		icon: Logo,
 		attributes: {
-			'variation': 'squiggle'
+			'variation': 'stamp',
+			'borderClassName': 'borderStamp'
 		},
 		isActive: ( blockAttributes ) => { 
-			return blockAttributes.variation === 'squiggle'
+			return blockAttributes.variation === 'stamp'
+		}
+	},
+	{
+		name: 'splat',
+		title: __( 'Splat', 'bigup-blocks' ),
+		icon: Logo,
+		attributes: {
+			'variation': 'splat',
+			'borderClassName': 'borderSplat'
+		},
+		isActive: ( blockAttributes ) => { 
+			return blockAttributes.variation === 'splat'
 		}
 	}
 ]
