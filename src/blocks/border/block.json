@@ -1,0 +1,48 @@
+{
+	"apiVersion": 2,
+	"name": "bigup-blocks/border",
+	"version": "0.0.1",
+	"title": "Border",
+	"category": "design",
+	"icon": "thumbs-up",
+	"description": "Wrap content with a border",
+	"keywords": [ "border", "svg" ],
+	"textdomain": "bigup-blocks",
+	"editorScript": "file:./border.js",
+	"editorStyle": "file:./border-editor.css",
+	"style": "file:./border.css",
+	"attributes": {
+		"variation": {
+			"type": "string",
+			"default": "wave"
+		},
+		"colour1": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "svg",
+        	"attribute": "data-colour1",
+			"default": "#999"
+		},
+		"colour2": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "svg",
+        	"attribute": "data-colour2",
+			"default": "#ccc"
+		},
+		"colour3": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "svg",
+        	"attribute": "data-colour3",
+			"default": "#666"
+		},
+		"borderWidth": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "svg",
+        	"attribute": "data-line-width",
+			"default": "1rem"
+		}
+	}
+}

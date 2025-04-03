@@ -1,0 +1,5 @@
+<svg class="vectorShapeWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 100">
+  <path class="vectorShapeWave_top" fill="var(--topColour)" d="M0 0v50s319-54 960 0c641 55 960 0 960 0V0Z"/>
+  <path class="vectorShapeWave_bottom" fill="var(--bottomColour)" d="M960 50c641 55 960 0 960 0v50H0V50s319-54 960 0Z"/>
+  <path class="vectorShapeWave_line" stroke-width="var(--lineWidth)" stroke="var(--lineColor)" style="visibility:var(--lineVisible);" fill="none" stroke-linecap="round" d="M0 50s312-55 960 0 960 0 960 0"/>
+</svg>
