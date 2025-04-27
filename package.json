@@ -11,7 +11,9 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.14.1",
-		"browser-sync-webpack-plugin": "^2.3.0"
+		"browser-sync-webpack-plugin": "^2.3.0",
+		"webpack": "^5.99.7",
+		"webpack-cli": "^6.0.1"
 	},
 	"scripts": {
 		"build": "webpack --mode production",

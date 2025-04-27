@@ -11,7 +11,6 @@ module.exports = {
 		...wordpressConfig.entry(),
 		// 'example/output': './path/to/dir/entrypoint.js',
 		'js/bigup-blocks-editor': './src/js/bigup-blocks-editor.js',
-		'css/bigup-blocks-common-styles': './src/css/bigup-blocks-common-styles.scss',
 		'third-party/js/gsap.min': './node_modules/gsap/dist/gsap.min.js',
 		'third-party/js/ScrollTrigger.min': './node_modules/gsap/dist/ScrollTrigger.min.js',
 	},

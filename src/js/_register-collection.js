@@ -4,7 +4,6 @@ import {
 	Logo
 } from '../svg/svg'
 
-
 /**
  * Register block collection.
  * 
