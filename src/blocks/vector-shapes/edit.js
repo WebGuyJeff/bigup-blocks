@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n'
-import { useBlockProps, useSetting, InspectorControls } from '@wordpress/block-editor'
+import { useBlockProps, useSettings, InspectorControls } from '@wordpress/block-editor'
 import { Panel, PanelBody, PanelRow, SelectControl, ColorPalette, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components'
 import { Wave, Squiggle } from './svg'
 import './vector-shapes-editor.scss'
@@ -74,13 +74,13 @@ export default function Edit( props ) {
 						<PanelRow>{ __( 'Top', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
 							value={ topColour }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
+							colors={ [ ...useSettings( 'color.palette' ) ] }
 							onChange={ ( value ) => setAttributes( { topColour: value } ) }
 						/>
 						<PanelRow>{ __( 'Bottom', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
 							value={ bottomColour }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
+							colors={ [ ...useSettings( 'color.palette' ) ] }
 							onChange={ ( value ) => setAttributes( { bottomColour: value } ) }
 						/>
 					</PanelBody>
@@ -103,7 +103,7 @@ export default function Edit( props ) {
 						<PanelRow>{ __( 'Colour', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
 							value={ lineColor }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
+							colors={ [ ...useSettings( 'color.palette' ) ] }
 							onChange={ ( value ) => setAttributes( { lineColor: value } ) }
 						/>
 					</PanelBody>

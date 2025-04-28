@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n'
-import { useBlockProps, useSetting, InspectorControls, InnerBlocks } from '@wordpress/block-editor'
+import { useBlockProps, useSettings, InspectorControls, InnerBlocks } from '@wordpress/block-editor'
 import { Panel, PanelBody, PanelRow, SelectControl, ColorPalette, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components'
 import './border-editor.scss'
 
@@ -73,7 +73,7 @@ export default function Edit( props ) {
 						<PanelRow>{ __( 'Colour', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
 							value={ borderColour }
-							colors={ [ ...useSetting( 'color.palette' ) ] }
+							colors={ [ ...useSettings( 'color.palette' ) ] }
 							onChange={ ( value ) => setAttributes( { borderColour: value } ) }
 						/>
 						<PanelRow>{ __( 'Width', 'bigup-blocks' ) }</PanelRow>
