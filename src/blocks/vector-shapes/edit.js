@@ -69,8 +69,10 @@ export default function Edit( props ) {
 					</PanelBody>
 				</Panel>
 				<Panel>
-					<PanelBody>
-						<PanelRow><h2>{ __( 'Colours', 'bigup-blocks' ) }</h2></PanelRow>
+					<PanelBody
+						title={ __( 'Colours', 'bigup-blocks' ) }
+						initialOpen={ true }
+					>
 						<PanelRow>{ __( 'Top', 'bigup-blocks' ) }</PanelRow>
 						<ColorPalette
 							value={ topColour }
@@ -86,8 +88,10 @@ export default function Edit( props ) {
 					</PanelBody>
 				</Panel>
 				<Panel>
-					<PanelBody>
-						<PanelRow><h2>{ __( 'Line Settings', 'bigup-blocks' ) }</h2></PanelRow>
+					<PanelBody
+						title={ __( 'Line Settings', 'bigup-blocks' ) }
+						initialOpen={ true }
+					>
 						<ToggleControl
 							label='Show Line'
 							help={ lineVisible ? __( 'Yes', 'bigup-blocks' ) : __( 'No', 'bigup-blocks' ) }

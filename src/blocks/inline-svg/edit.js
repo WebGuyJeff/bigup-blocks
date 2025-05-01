@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n'
 import { useBlockProps, InspectorControls, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
-import { PanelBody, Button, ResponsiveWrapper } from '@wordpress/components'
+import { Panel, PanelBody, PanelRow, Button, ResponsiveWrapper, __experimentalUnitControl as UnitControl } from '@wordpress/components'
 import './inline-svg-editor.scss'
 
 /**
@@ -15,12 +15,15 @@ export default function Edit( { attributes, setAttributes, media } ) {
 	const {
 		mediaId,
 		mediaUrl,
-		svgSource
+		svgSource,
+		width,
+		height
 	} = attributes
 
 	const blockProps = useBlockProps( {
-        style: { backgroundImage: mediaUrl != '' ? 'url("' + mediaUrl + '")' : 'none' },
-    } )
+		className: 'inlineSVGWrapper',
+		style: { width: width, height: height }
+	} )
 
 	const removeMedia = () => {
 		setAttributes( {
@@ -43,81 +46,104 @@ export default function Edit( { attributes, setAttributes, media } ) {
 		} )
 	}
 
-	let SVGinline = () => { return(
-		<div dangerouslySetInnerHTML={ { __html: svgSource } } />
-	) }
-
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title={ __( 'Select SVG image', 'bigup-blocks' ) }
-					initialOpen={ true }
-				>
-					<div className="editor-post-featured-image">
-						<MediaUploadCheck>
-							<MediaUpload
-								onSelect={ onSelectMedia }
-								value={ mediaId }
-								allowedTypes={ [ 'image/svg+xml' ] }
-								render={ ( { open } ) => (
-									<Button 
-										className={ mediaId == 0 ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview'}
-										onClick={ open }
-									>
-										{ mediaId == 0 && __( 'Choose an image', 'bigup-blocks' ) }
-										{ media != undefined && 
-						            		<ResponsiveWrapper
-									    		naturalWidth={ media.media_details.width }
-												naturalHeight={ media.media_details.height }
-									    	>
-									    		<img src={ media.source_url } />
-									    	</ResponsiveWrapper>
-						            		}
-									</Button>
-								) }
-							/>
-						</MediaUploadCheck>
-						{ mediaId != 0 && 
+				<Panel>
+					<PanelBody
+						title={ __( 'Select SVG image', 'bigup-blocks' ) }
+						initialOpen={ true }
+					>
+						<div className="editor-post-featured-image">
 							<MediaUploadCheck>
 								<MediaUpload
-									title={ __( 'Replace image', 'bigup-blocks' ) }
-									value={ mediaId }
 									onSelect={ onSelectMedia }
+									value={ mediaId }
 									allowedTypes={ [ 'image/svg+xml' ] }
 									render={ ( { open } ) => (
-										<Button
+										<Button 
+											className={ mediaId == 0 ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview'}
 											onClick={ open }
 										>
-											{ __( 'Replace image', 'bigup-blocks') }
+											{ mediaId == 0 && __( 'Choose an image', 'bigup-blocks' ) }
+											{ media != undefined && 
+												<ResponsiveWrapper
+													naturalWidth={ media.media_details.width }
+													naturalHeight={ media.media_details.height }
+												>
+													<img src={ media.source_url } />
+												</ResponsiveWrapper>
+												}
 										</Button>
 									) }
 								/>
 							</MediaUploadCheck>
-						}
-						{ mediaId != 0 && 
-							<MediaUploadCheck>
-								<Button
-									onClick={ removeMedia }
-								>
-									{ __( 'Remove image', 'bigup-blocks' ) }
-								</Button>
-							</MediaUploadCheck>
-						}
-					</div>
-				</PanelBody>
+							{ mediaId != 0 && 
+								<MediaUploadCheck>
+									<MediaUpload
+										title={ __( 'Replace image', 'bigup-blocks' ) }
+										value={ mediaId }
+										onSelect={ onSelectMedia }
+										allowedTypes={ [ 'image/svg+xml' ] }
+										render={ ( { open } ) => (
+											<Button
+												onClick={ open }
+											>
+												{ __( 'Replace image', 'bigup-blocks') }
+											</Button>
+										) }
+									/>
+								</MediaUploadCheck>
+							}
+							{ mediaId != 0 && 
+								<MediaUploadCheck>
+									<Button
+										onClick={ removeMedia }
+									>
+										{ __( 'Remove image', 'bigup-blocks' ) }
+									</Button>
+								</MediaUploadCheck>
+							}
+						</div>
+					</PanelBody>
+				</Panel>
+				<Panel>
+					<PanelBody
+						title={ __( 'Dimensions', 'bigup-blocks' ) }
+						initialOpen={ true }
+					>
+						<PanelRow>{ __( 'Width', 'bigup-blocks' ) }</PanelRow>
+						<UnitControl
+							value={ width }
+							onChange={ ( value ) => setAttributes( { width: value } ) }
+							__next40pxDefaultSize
+						/>
+						<PanelRow>{ __( 'Height', 'bigup-blocks' ) }</PanelRow>
+						<UnitControl
+							value={ height }
+							onChange={ ( value ) => setAttributes( { height: value } ) }
+							__next40pxDefaultSize
+						/>
+					</PanelBody>
+				</Panel>
 			</InspectorControls>
-			<div { ...blockProps }>
-				<p>{ 'SVG Data:' }</p>
-				{ svgSource != '' &&
-					<div innerHTML={ svgSource }></div>
-				}
-				{ svgSource === '' &&
-					<div dangerouslySetInnerHTML={
-						{ __html: svgSource }
-					} />
-				}
-			</div>
+			{ svgSource != '' &&
+				<div
+					{ ...blockProps }
+					dangerouslySetInnerHTML={ { __html: svgSource } }
+					data-line-width={ width }
+					data-line-height={ height }
+				/>
+			}
+			{ svgSource === '' &&
+				<div
+					{ ...blockProps }
+					data-line-width={ width }
+					data-line-height={ height }
+				>
+					<p>{ 'Select SVG image' }</p>
+				</div>
+			}
 		</>
 	)
 }

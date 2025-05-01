@@ -11,20 +11,22 @@ import { useBlockProps } from '@wordpress/block-editor'
  */
 export default function save( { attributes } ) {
 	const {
-		mediaUrl
+		svgSource,
+		width,
+		height
 	} = attributes
 
 	const blockProps = useBlockProps.save( {
-        style: { backgroundImage: mediaUrl != '' ? 'url("' + mediaUrl + '")' : 'none' },
-    } )
-
-	const blockStyle = {
-		backgroundImage: mediaUrl != '' ? 'url("' + mediaUrl + '")' : 'none'
-	}
+		className: 'inlineSVGWrapper',
+		style: { width: width, height: height }
+	} )
 
 	return (
-		<div { ...blockProps }>
-			<p>{ mediaUrl }</p>
-		</div>
+		<div
+			{ ...blockProps }
+			dangerouslySetInnerHTML={ { __html: svgSource } }
+			data-line-width={ width }
+			data-line-height={ height }
+		/>
 	)
 }

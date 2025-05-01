@@ -23,6 +23,20 @@
 		"svgSource": {
 			"type": "string",
 			"default": ""
+		},
+		"width": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".bigup__inlineSVG",
+        	"attribute": "data-line-width",
+			"default": "auto"
+		},
+		"height": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".bigup__inlineSVG",
+        	"attribute": "data-line-height",
+			"default": "auto"
 		}
 	}
 }
