@@ -56,7 +56,16 @@ export default function Edit( { attributes, setAttributes, media } ) {
 		fetch( media.url, { mode: 'no-cors'} )
 		.then( result => result.text() )
 		.then( text => {
-			const matches      = text.match( /<svg[^>]*?>[\S\s]*<\/svg>/ )
+			if ( !text ) {
+				alert( 'No text content from fetch. This is probably a CORS issue. If you are in a development environment, please ensure you are browsing from the same domain and port as the web server config.' )
+				console.error( 'No text content from fetch. This is probably a CORS issue.' )
+				return
+			}
+			const matches = text.match( /<svg[^>]*?>[\S\s]*<\/svg>/ )
+			if ( !matches ) {
+				console.error( 'No SVG retrieved from file.' )
+				return
+			}
 			const newStringSVG = setDimensionAttrsOfSVG( matches[0] )
 			setAttributes( {
 				mediaId: media.id,
@@ -161,7 +170,8 @@ export default function Edit( { attributes, setAttributes, media } ) {
 					data-line-width={ width }
 					data-line-height={ height }
 				>
-					<p>{ 'Select SVG image' }</p>
+					<p>{ '<SVG>' }</p>
+					<p>{ __( 'Select image', 'bigup-blocks' ) }</p>
 				</div>
 			}
 		</>
