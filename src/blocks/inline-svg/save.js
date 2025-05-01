@@ -17,7 +17,7 @@ export default function save( { attributes } ) {
 	} = attributes
 
 	const blockProps = useBlockProps.save( {
-		className: 'inlineSVGWrapper',
+		className: 'bigup__inlineSVG',
 		style: { width: width, height: height }
 	} )
 

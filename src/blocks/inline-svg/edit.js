@@ -21,7 +21,7 @@ export default function Edit( { attributes, setAttributes, media } ) {
 	} = attributes
 
 	const blockProps = useBlockProps( {
-		className: 'inlineSVGWrapper',
+		className: 'bigup__inlineSVG',
 		style: { width: width, height: height }
 	} )
 
@@ -31,17 +31,37 @@ export default function Edit( { attributes, setAttributes, media } ) {
 			mediaUrl: ''
 		} )
 	}
+
+	/**
+	 * Temporarily insert an SVG string into the DOM as an element to manipulate the height, width
+	 * and preserveAspectRatio attributes. Then grab the new HTML and remove the temporary element.
+	 * 
+	 * Setting these attributes forces the SVG to fill it's container while remaining 'contained'.
+	 */
+	const setDimensionAttrsOfSVG = ( stringSVG ) => {
+		const div = document.createElement( 'div' )
+		div.innerHTML = stringSVG
+		div.style.display = 'none'
+		document.body.appendChild( div )
+		const svg = div.querySelector( 'svg' )
+		svg.setAttribute( 'preserveAspectRatio', 'xMidYMid meet' )
+		svg.setAttribute( 'width', '100%' )
+		svg.setAttribute( 'height', '100%' )
+		const newStringSVG = svg.outerHTML
+		document.body.removeChild( div )
+		return newStringSVG
+	}
  
  	const onSelectMedia = ( media ) => {
 		fetch( media.url, { mode: 'no-cors'} )
 		.then( result => result.text() )
 		.then( text => {
-			const SVG = text.match( /<svg[^>]*?>[\S\s]*<\/svg>/ )
-			console.log( 'SVG: ', SVG )
+			const matches      = text.match( /<svg[^>]*?>[\S\s]*<\/svg>/ )
+			const newStringSVG = setDimensionAttrsOfSVG( matches[0] )
 			setAttributes( {
 				mediaId: media.id,
 				mediaUrl: media.url,
-				svgSource: SVG
+				svgSource: newStringSVG
 			} )
 		} )
 	}
